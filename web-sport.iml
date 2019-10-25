@@ -22,5 +22,7 @@
     <orderEntry type="library" name="freemarker" level="project" />
     <orderEntry type="library" name="postgresql-42.2.8" level="project" />
     <orderEntry type="library" name="servlet-api" level="project" />
+    <orderEntry type="library" name="jquery-latest" level="application" />
+    <orderEntry type="library" name="jstl-1.2" level="project" />
   </component>
 </module>
