@@ -10,6 +10,28 @@
 <html>
 <head>
     <title>Вход</title>
+    <script type="text/javascript">
+        function check() {
+            var login = document.getElementById("loginField").value;
+            var password = document.getElementById("passwordField").value;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    if (xmlhttp.responseText == 0) {
+                        //допилить алерт
+                        document.getElementById("display").innerHTML = "неправильно введен логин или пароль";
+                    }
+                    else {
+                        window.location.href = "/profile"
+                    }
+                }
+            };
+            xmlhttp.open("POST", "/login", true);
+            xmlhttp.setRequestHeader("Content-Type",
+                "application/x-www-form-urlencoded");
+            xmlhttp.send("login=" + login + "&password=" + password);
+        }
+    </script>
 </head>
 <body>
     <form method="post">
@@ -32,10 +54,11 @@
             </tr>
             <tr>
                 <td colspan="2" style="text-align: center">
-                    <input type="submit" value="Log in">
+                    <input type="button" value="Log in" onclick="check()">
                 </td>
             </tr>
         </table>
     </form>
+    <p id="display"></p>
 </body>
 </html>

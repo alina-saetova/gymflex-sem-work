@@ -20,15 +20,17 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("current_user");
+        response.setContentType("text/xml");
         if (user != null) {
             response.sendRedirect("/profile");
         } else {
             try {
                 if (validatingUser(request.getParameter("login"), request.getParameter("password"))) {
                     session.setAttribute("current_user", ud.getUserByLogin(request.getParameter("login")));
-                    response.sendRedirect("/profile");
+                    response.getWriter().println(1);
                 } else {
-                    response.sendRedirect("/login");
+                    //ajax
+                    response.getWriter().println(0);
                 }
             } catch (SQLException | ClassNotFoundException e) {
                 e.printStackTrace();
