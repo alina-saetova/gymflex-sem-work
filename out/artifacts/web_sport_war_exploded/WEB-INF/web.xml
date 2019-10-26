@@ -136,5 +136,24 @@
         <url-pattern>*.js</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>edit_profile</servlet-name>
+        <servlet-class>EditProfileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>edit_profile</servlet-name>
+        <url-pattern>/edit_profile</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>change_password</servlet-name>
+        <servlet-class>ChangePasswordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>change_password</servlet-name>
+        <url-pattern>/change_password</url-pattern>
+    </servlet-mapping>
+
+
 
 </web-app>
