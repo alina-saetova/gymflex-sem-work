@@ -130,6 +130,24 @@
         <url-pattern>/training_page</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>calculator</servlet-name>
+        <servlet-class>CalculatorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>calculator</servlet-name>
+        <url-pattern>/calculator</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>calculator_page</servlet-name>
+        <jsp-file>/WEB-INF/calculator.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>calculator_page</servlet-name>
+        <url-pattern>/calculator_page</url-pattern>
+    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>*.css</url-pattern>
