@@ -55,14 +55,14 @@
         <input type="text" id="lastname" value="${user.getLastName()}">
         <p>Login:</p>
         <input type="text" id="login" value="${user.getLogin()}">
-        <input type="button" name="rewrite" onclick="set()">
+        <input type="button" name="rewrite" onclick="set()" value="сохранить">
     </form>
     <form method="post">
         <p>Old password:</p>
         <input type="text" id="old_password">
         <p>New password:</p>
         <input type="text" id="new_password">
-        <input type="button" name="rewrite" onclick="change_password()">
+        <input type="button" name="rewrite" onclick="change_password()" value="изменить">
     </form>
 </body>
 </html>

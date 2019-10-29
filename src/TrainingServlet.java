@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.ParseException;
@@ -57,10 +58,40 @@ public class TrainingServlet extends HttpServlet {
         } catch (SQLException | ParseException ex) {
             ex.printStackTrace();
         }
+        User user = (User) req.getSession().getAttribute("current_user");
+        String user_id = null;
+        if (user != null) {
+            user_id = user.getId();
+        }
+        String flag = "";
+        try {
+            flag = checkLike(user_id, id);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        req.setAttribute("flag", flag);
         req.setAttribute("comms", comms);
         req.setAttribute("training", t);
         resp.setContentType("text/html");
         RequestDispatcher rd = req.getRequestDispatcher("/training_page");
         rd.forward(req, resp);
+    }
+
+    private String checkLike(String user_id, String training_id) throws SQLException {
+        if (user_id == null) {
+            return "no_auth";
+        }
+        Statement st = null;
+        try {
+            st = ConnectionToDatabase.getConnection().createStatement();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        ResultSet rs = st.executeQuery("select * from fav_training_user " +
+                "where training_id = " + training_id + " AND user_id = " + user_id + ";");
+        if (rs.next()) {
+            return "true";
+        }
+        return "false";
     }
 }

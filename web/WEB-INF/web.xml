@@ -172,6 +172,14 @@
         <url-pattern>/change_password</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>like_article</servlet-name>
+        <servlet-class>LikeArticleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>like_article</servlet-name>
+        <url-pattern>/like_article</url-pattern>
+    </servlet-mapping>
 
 
 </web-app>
