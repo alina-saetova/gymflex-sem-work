@@ -17,6 +17,7 @@ public class ExerciseServlet extends HttpServlet {
 
     ExerciseDAO ed = new ExerciseDAO();
     CommentaryDAO cd = new CommentaryDAO();
+    SavedExerciseDAO sed = new SavedExerciseDAO();
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
@@ -65,7 +66,7 @@ public class ExerciseServlet extends HttpServlet {
         }
         String flag = "";
         try {
-            flag = checkLike(user_id, id);
+            flag = sed.checkLike(user_id, id);
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -77,21 +78,5 @@ public class ExerciseServlet extends HttpServlet {
         rd.forward(req, resp);
     }
 
-    private String checkLike(String user_id, String exercise_id) throws SQLException {
-        if (user_id == null) {
-            return "no_auth";
-        }
-        Statement st = null;
-        try {
-            st = ConnectionToDatabase.getConnection().createStatement();
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        ResultSet rs = st.executeQuery("select * from fav_exercise_user " +
-                "where exercise_id = " + exercise_id + " AND user_id = " + user_id + ";");
-        if (rs.next()) {
-            return "true";
-        }
-        return "false";
-    }
+
 }

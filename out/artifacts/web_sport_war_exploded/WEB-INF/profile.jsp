@@ -11,7 +11,7 @@
 <head>
     <title>Профиль</title>
     <script type="text/javascript">
-        function set() {
+        function save() {
             var fname = document.getElementById("firstname").value;
             var lname = document.getElementById("lastname").value;
             var login = document.getElementById("login").value;
@@ -55,7 +55,7 @@
         <input type="text" id="lastname" value="${user.getLastName()}">
         <p>Login:</p>
         <input type="text" id="login" value="${user.getLogin()}">
-        <input type="button" name="rewrite" onclick="set()" value="сохранить">
+        <input type="button" name="rewrite" onclick="save()" value="сохранить">
     </form>
     <form method="post">
         <p>Old password:</p>
@@ -64,5 +64,13 @@
         <input type="text" id="new_password">
         <input type="button" name="rewrite" onclick="change_password()" value="изменить">
     </form>
+    <p>Сохраненные тренировки</p>
+    <c:forEach var="s_tr" items="${saved_trainings}">
+        <p>${s_tr.getName()}</p>
+    </c:forEach>
+    <p>Сохраненные упражнения</p>
+    <c:forEach var="s_ex" items="${saved_exercises}">
+        <p>${s_ex.getName()}</p>
+    </c:forEach>
 </body>
 </html>

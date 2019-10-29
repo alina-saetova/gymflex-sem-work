@@ -7,12 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ProfileServlet extends HttpServlet {
 
     UserDAO ud = new UserDAO();
+    TrainingDAO td = new TrainingDAO();
+    SavedTrainingDAO std = new SavedTrainingDAO();
+    SavedExerciseDAO sed = new SavedExerciseDAO();
+    ExerciseDAO ed = new ExerciseDAO();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -21,6 +28,38 @@ public class ProfileServlet extends HttpServlet {
             response.sendRedirect("/login");
         }
         else {
+            List<String> tr_ids = new ArrayList<>();
+            try {
+                tr_ids = std.getSavedTrainingsId(user);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            List<Training> saved_trainings = new ArrayList<>();
+            for (String id : tr_ids) {
+                try {
+                    saved_trainings.add(td.getTrainingById(id));
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            request.setAttribute("saved_trainings", saved_trainings);
+
+            List<String> ex_ids = new ArrayList<>();
+            try {
+                ex_ids = sed.getSavedExercisesId(user);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            List<Exercise> saved_exercises = new ArrayList<>();
+            for (String id : ex_ids) {
+                try {
+                    saved_exercises.add(ed.getExerciseById(id));
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            request.setAttribute("saved_exercises", saved_exercises);
+
             request.setAttribute("user", user);
             response.setContentType("text/html");
             RequestDispatcher rd = request.getRequestDispatcher("/profile_page");
