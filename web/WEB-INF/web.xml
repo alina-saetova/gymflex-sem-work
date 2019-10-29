@@ -181,5 +181,14 @@
         <url-pattern>/like_article</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>delete_article</servlet-name>
+        <servlet-class>DeleteArticleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delete_article</servlet-name>
+        <url-pattern>/delete_article</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

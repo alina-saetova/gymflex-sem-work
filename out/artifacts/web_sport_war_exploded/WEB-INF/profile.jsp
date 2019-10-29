@@ -45,6 +45,23 @@
                 "application/x-www-form-urlencoded");
             xmlhttp.send("oldpassword=" + oldp + "&newpassword=" + newp);
         }
+        function delete_training(s_tr) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("POST", "/delete_article", true);
+            xmlhttp.setRequestHeader("Content-Type",
+                "application/x-www-form-urlencoded");
+            xmlhttp.send("type=training" + "&training_id=" + s_tr);
+        }
+        function delete_exercise(s_ex) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("POST", "/delete_article", true);
+            xmlhttp.setRequestHeader("Content-Type",
+                "application/x-www-form-urlencoded");
+            xmlhttp.send("type=exercise" + "&exercise_id=" + s_ex);
+        }
+        function remove(id) {
+            document.getElementById(id).remove();
+        }
     </script>
 </head>
 <body>
@@ -66,11 +83,17 @@
     </form>
     <p>Сохраненные тренировки</p>
     <c:forEach var="s_tr" items="${saved_trainings}">
-        <p>${s_tr.getName()}</p>
+        <div id="${s_tr.getId()}">
+            <p>${s_tr.getName()}</p>
+            <input type="button" value="Удалить" onclick="delete_training(${s_tr.getId()}); remove(${s_tr.getId()})">
+        </div>
     </c:forEach>
     <p>Сохраненные упражнения</p>
     <c:forEach var="s_ex" items="${saved_exercises}">
-        <p>${s_ex.getName()}</p>
+        <div id="${s_ex.getId()}">
+            <p>${s_ex.getName()}</p>
+            <input type="button"  value="Удалить" onclick="delete_exercise(${s_ex.getId()});remove(${s_ex.getId()})">
+        </div>
     </c:forEach>
 </body>
 </html>
