@@ -74,6 +74,7 @@
         <input type="text" id="login" value="${user.getLogin()}">
         <input type="button" name="rewrite" onclick="save()" value="сохранить">
     </form>
+    <img src="${user.getPhoto()}" width="200">
     <form method="post">
         <p>Old password:</p>
         <input type="text" id="old_password">

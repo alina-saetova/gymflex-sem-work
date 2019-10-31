@@ -11,7 +11,7 @@
     <title>Регистрация</title>
 </head>
 <body>
-    <form method="post"  name="regform">
+    <form method="post"  name="regform"  enctype="multipart/form-data">
         <label>Логин  </label><input type="text" name="login"><br>
         <br>
         <label>Имя   </label><input type="text" name="first_name"><br>
@@ -19,6 +19,8 @@
         <label>Фамилия  </label><input type="text" name="last_name"><br>
         <br>
         <label>Пароль  </label><input type="password" name="password"><br>
+        <br>
+        <label>Фото  </label><input type="file" name="photo"><br>
         <br>
         <input type="submit" value="Зарегистрироваться">
     </form>

@@ -6,6 +6,16 @@ public class User {
     private String login;
     private String password;
 
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    private String photo;
+
     @Override
     public String toString() {
         return "User{" +
@@ -57,11 +67,12 @@ public class User {
         this.password = password;
     }
 
-    public User(String id, String firstName, String lastName, String login, String password) {
+    public User(String id, String firstName, String lastName, String login, String password, String photo) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.login = login;
         this.password = password;
+        this.photo = photo;
     }
 }

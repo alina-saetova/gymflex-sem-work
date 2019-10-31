@@ -148,10 +148,49 @@
         <url-pattern>/calculator_page</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>create_training_one</servlet-name>
+        <servlet-class>CreatingTrainingPartOneServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>create_training_one</servlet-name>
+        <url-pattern>/create_training_one</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>create_training_one_page</servlet-name>
+        <jsp-file>/WEB-INF/create_training_title.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>create_training_one_page</servlet-name>
+        <url-pattern>/create_training_one_page</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>create_training_two</servlet-name>
+        <servlet-class>CreatingTrainingPartTwoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>create_training_two</servlet-name>
+        <url-pattern>/create_training_two</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>create_training_two_page</servlet-name>
+        <jsp-file>/WEB-INF/create_training_exs.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>create_training_two_page</servlet-name>
+        <url-pattern>/create_training_two_page</url-pattern>
+    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>*.css</url-pattern>
         <url-pattern>*.js</url-pattern>
+        <url-pattern>*.jpg</url-pattern>
+        <url-pattern>*.png</url-pattern>
+
     </servlet-mapping>
 
     <servlet>

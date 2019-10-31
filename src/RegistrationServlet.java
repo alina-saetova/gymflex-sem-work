@@ -1,13 +1,18 @@
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+
+@MultipartConfig
 public class RegistrationServlet extends HttpServlet {
 
     UserDAO ud = new UserDAO();
@@ -32,11 +37,21 @@ public class RegistrationServlet extends HttpServlet {
         String firstName = req.getParameter("first_name");
         String lastName = req.getParameter("last_name");
         String password = req.getParameter("password");
-        String photo = "x";
-        int i = -79;
+        Part p = req.getPart("photo");
+        String localdir = "uploads";
+        String pathDir = getServletContext().getRealPath("") + File.separator + localdir;
+        File dir = new File(pathDir);
+        if (!dir.exists()) {
+            dir.mkdir();
+        }
+        String[] filename_data = p.getSubmittedFileName().split("\\.");
+        String filename = Math.random() + "." + filename_data[filename_data.length - 1];
+        String fullpath = pathDir + File.separator + filename;
+        p.write(fullpath);
+        String photo = "/" + localdir + "/" + filename;
         try {
-            i = statement.executeUpdate("insert into users (firstname, lastname, login, password, photo) VALUES ('" +
-                    login +"', '" + firstName + "', '" + lastName + "', '" + password + "', '" + photo + "')");
+            statement.executeUpdate("insert into users (firstname, lastname, login, password, photo) VALUES ('" +
+                    firstName +"', '" + lastName + "', '" + login + "', '" + password + "', '" + photo + "')");
         } catch (SQLException e) {
             e.printStackTrace();
         }

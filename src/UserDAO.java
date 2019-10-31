@@ -20,7 +20,7 @@ public class UserDAO {
         while (rs.next()) {
             u = new User(rs.getString("id"), rs.getString("firstName"),
                     rs.getString("lastName"), rs.getString("login"),
-                    rs.getString("password"));
+                    rs.getString("password"), rs.getString("photo"));
         }
         return u;
 
@@ -32,7 +32,7 @@ public class UserDAO {
         while (rs.next()) {
             u = new User(rs.getString("id"), rs.getString("firstName"),
                     rs.getString("lastName"), rs.getString("login"),
-                    rs.getString("password"));
+                    rs.getString("password"), rs.getString("photo"));
         }
         return u;
 
