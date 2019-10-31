@@ -96,5 +96,14 @@
             <input type="button"  value="Удалить" onclick="delete_exercise(${s_ex.getId()});remove(${s_ex.getId()})">
         </div>
     </c:forEach>
+    <p>Свои тренировки</p>
+    <c:forEach var="c_tr" items="${map}">
+        <div id="${c_tr.key.getId()}">
+            <p>${c_tr.key.getName()}</p>
+            <c:forEach var="c_ex" items="${c_tr.value}">
+            <p>${c_ex.getName()} --- ${c_ex.getReps()}</p>
+            </c:forEach>
+        </div>
+    </c:forEach>
 </body>
 </html>

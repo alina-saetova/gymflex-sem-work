@@ -20,6 +20,8 @@ public class ProfileServlet extends HttpServlet {
     SavedTrainingDAO std = new SavedTrainingDAO();
     SavedExerciseDAO sed = new SavedExerciseDAO();
     ExerciseDAO ed = new ExerciseDAO();
+    UserTrainingDAO utd = new UserTrainingDAO();
+    UserExerciseDAO ued = new UserExerciseDAO();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -58,8 +60,22 @@ public class ProfileServlet extends HttpServlet {
                     e.printStackTrace();
                 }
             }
+            Map<UserTraining, List<UserExercise>> map = new HashMap<>();
+            List<UserTraining> ut = new ArrayList<>();
+            try {
+                ut = utd.getUserTrainings(user.getId());
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            for (UserTraining u : ut) {
+                try {
+                    map.put(u, ued.getExercisesFromUserTraining(u.getId()));
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            request.setAttribute("map", map);
             request.setAttribute("saved_exercises", saved_exercises);
-
             request.setAttribute("user", user);
             response.setContentType("text/html");
             RequestDispatcher rd = request.getRequestDispatcher("/profile_page");
