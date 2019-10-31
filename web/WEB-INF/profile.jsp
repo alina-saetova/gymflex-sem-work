@@ -50,14 +50,21 @@
             xmlhttp.open("POST", "/delete_article", true);
             xmlhttp.setRequestHeader("Content-Type",
                 "application/x-www-form-urlencoded");
-            xmlhttp.send("type=training" + "&training_id=" + s_tr);
+            xmlhttp.send("type=training" + "&id=" + s_tr);
         }
         function delete_exercise(s_ex) {
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open("POST", "/delete_article", true);
             xmlhttp.setRequestHeader("Content-Type",
                 "application/x-www-form-urlencoded");
-            xmlhttp.send("type=exercise" + "&exercise_id=" + s_ex);
+            xmlhttp.send("type=exercise" + "&id=" + s_ex);
+        }
+        function delete_own_training(c_tr) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("POST", "/delete_article", true);
+            xmlhttp.setRequestHeader("Content-Type",
+                "application/x-www-form-urlencoded");
+            xmlhttp.send("type=own_training" + "&id=" + c_tr);
         }
         function remove(id) {
             document.getElementById(id).remove();
@@ -103,6 +110,7 @@
             <c:forEach var="c_ex" items="${c_tr.value}">
             <p>${c_ex.getName()} --- ${c_ex.getReps()}</p>
             </c:forEach>
+            <input type="button"  value="Удалить" onclick="delete_own_training(${c_tr.key.getId()});remove(${c_tr.key.getId()})">
         </div>
     </c:forEach>
 </body>

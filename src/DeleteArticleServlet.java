@@ -7,6 +7,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DeleteArticleServlet extends HttpServlet {
+
+    UserExerciseDAO ued = new UserExerciseDAO();
+    UserTrainingDAO utd = new UserTrainingDAO();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doGet(req, resp);
@@ -22,18 +26,33 @@ public class DeleteArticleServlet extends HttpServlet {
             e.printStackTrace();
         }
         User user = (User) req.getSession().getAttribute("current_user");
+        String id =  req.getParameter("id");
+        System.out.println(id);
+        System.out.println(type);
         if (type.equals("exercise")) {
-            String exercise_id = req.getParameter("exercise_id");
             try {
-                st.executeUpdate("delete from fav_exercise_user where exercise_id = " + exercise_id + " AND user_id = " + user.getId());
+                st.executeUpdate("delete from fav_exercise_user where exercise_id = " + id + " AND user_id = " + user.getId());
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        else if (type.equals("own_training")) {
+            System.out.println("qwe");
+            try {
+                utd.deleteUserTraining(id);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            try {
+                ued.deleteUserExercisesFromTraining(id);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
         else {
-            String training_id = req.getParameter("training_id");
+
             try {
-                st.executeUpdate("delete from fav_training_user where training_id = " + training_id + " AND user_id = " + user.getId());
+                st.executeUpdate("delete from fav_training_user where training_id = " + id + " AND user_id = " + user.getId());
             } catch (SQLException e) {
                 e.printStackTrace();
             }

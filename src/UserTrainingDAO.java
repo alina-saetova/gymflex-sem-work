@@ -36,4 +36,8 @@ public class UserTrainingDAO {
         }
         return ut;
     }
+
+    public void deleteUserTraining(String id) throws SQLException {
+        stmnt.executeUpdate("delete from utrainings where id=" + id);
+    }
 }

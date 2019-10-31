@@ -30,4 +30,8 @@ public class UserExerciseDAO {
         }
         return list;
     }
+
+    public void deleteUserExercisesFromTraining(String id) throws SQLException {
+        stmnt.executeUpdate("delete from uexercises where utraining_id=" + id);
+    }
 }
