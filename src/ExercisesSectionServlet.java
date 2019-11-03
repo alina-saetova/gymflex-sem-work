@@ -2,6 +2,8 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import freemarker.template.TemplateExceptionHandler;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -42,10 +44,14 @@ public class ExercisesSectionServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        resp.setContentType("text/html");
-        req.setAttribute("selected_exs", exercises);
-        RequestDispatcher rd = req.getRequestDispatcher("/exercises_section_page");
-        rd.forward(req, resp);
+        System.out.println(exercises);
+        JSONArray ja = new JSONArray();
+        for (Exercise exercise: exercises) {
+            ja.put(new JSONObject(exercise));
+        }
+        JSONObject jo = new JSONObject();
+        jo.put("objects", ja);
+        resp.setContentType("text/json");
+        resp.getWriter().write(jo.toString());
     }
 }

@@ -1,3 +1,6 @@
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -34,9 +37,13 @@ public class TrainingsSectionServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        resp.setContentType("text/html");
-        req.setAttribute("selected_trs", trainings);
-        RequestDispatcher rd = req.getRequestDispatcher("/trainings_section_page");
-        rd.forward(req, resp);    }
+        JSONArray ja = new JSONArray();
+        for (Training training: trainings) {
+            ja.put(new JSONObject(training));
+        }
+        JSONObject jo = new JSONObject();
+        jo.put("objects", ja);
+        resp.setContentType("text/json");
+        resp.getWriter().write(jo.toString());
+    }
 }

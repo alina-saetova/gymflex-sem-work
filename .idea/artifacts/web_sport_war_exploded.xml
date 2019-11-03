@@ -11,6 +11,7 @@
           <element id="library" level="project" name="freemarker" />
           <element id="library" level="project" name="postgresql-42.2.8" />
           <element id="library" level="project" name="jstl-1.2" />
+          <element id="library" level="project" name="json-20190722" />
         </element>
       </element>
     </root>
