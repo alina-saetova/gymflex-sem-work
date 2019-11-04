@@ -9,6 +9,16 @@ public class Commentary {
     private String user_id;
     private String article_id;
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    private String type;
+
     public void setDate(Date date) {
         this.date = date;
     }
@@ -61,15 +71,17 @@ public class Commentary {
                 ", article_id='" + article_id + '\'' +
                 ", date='" + date + '\'' +
                 ", content='" + content + '\'' +
+                ", type='" + type + '\'' +
                 '}';
     }
 
-    public Commentary(String id, String user_id, String article_id, Date date, String content) throws ParseException {
+    public Commentary(String id, String user_id, String article_id, Date date, String content, String type) throws ParseException {
         this.id = id;
         this.user_id = user_id;
         this.article_id = article_id;
         this.date = date;
         this.content = content;
+        this.type = type;
     }
 
 

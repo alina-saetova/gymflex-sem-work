@@ -22,17 +22,38 @@
                 }
             })
         }
+        function send_comment(ex_id) {
+            $.ajax({
+                type: "POST",
+                url: "/commentary",
+                data: {
+                    id : ex_id,
+                    type : "exercise",
+                    text : $("#comment").val()
+                },
+                dataType: "json",
+                success: function (msg) {
+                    if (msg.objects.length > 0) {
+                        $("#resptext").append("<p>" + msg.objects[0].content + "</p>");
+                    } else {
+                        $("#resptext").html("No results..");
+                    }
+                }
+            })
+        }
     </script>
 </head>
 <body>
     <p><c:out value="${exercise.getName()}"/></p>
-    <c:forEach var="com" items="${comms}">
-        <p>${com.getContent()}</p>
-    </c:forEach>
+    <div id="resptext">
+        <c:forEach var="com" items="${comms}">
+            <p>${com.getContent()}</p>
+        </c:forEach>
+    </div>
     <form method="post">
         <p><b>Введите ваш отзыв:</b></p>
-        <p><textarea rows="10" cols="45" name="text"></textarea></p>
-        <p><input type="submit" value="Отправить"></p>
+        <p><textarea rows="10" cols="45" name="text" id="comment"></textarea></p>
+        <p><input type="button" value="Отправить" onclick="send_comment(${exercise.getId()})"></p>
     </form>
 <%--    проверяет наличие лайка--%>
     <div id="like_button">

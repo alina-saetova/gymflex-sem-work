@@ -1,3 +1,6 @@
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -21,27 +24,7 @@ public class ExerciseServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
-        Statement statement = null;
-        try {
-            statement = ConnectionToDatabase.getConnection().createStatement();
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        String article_id = request.getParameter("id");
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("current_user");
-        String user_id = user.getId();
-        Date date = new Date();
-        String content = request.getParameter("text");
-        System.out.println(content);
-        try {
-            statement.executeUpdate("insert into commentaries (user_id, article_id, date, content) VALUES ('" +
-                    user_id +"', '" + article_id + "', '" + date + "', '" + content + "')");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        resp.sendRedirect("/exercise?id=" + article_id);
-
+        super.doPost(request, resp);
     }
 
     @Override
@@ -55,7 +38,7 @@ public class ExerciseServlet extends HttpServlet {
         }
         List<Commentary> comms = new ArrayList<>();
         try {
-            comms = cd.getArticleCommentaries(id);
+            comms = cd.getArticleCommentaries(id, "exercise");
         } catch (SQLException | ParseException ex) {
             ex.printStackTrace();
         }

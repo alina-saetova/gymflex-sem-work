@@ -10,14 +10,35 @@
 <html>
 <head>
     <title>Title</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
     <script type="text/javascript">
         function like(id) {
+            alert(2);
             $.ajax({
                 type: "POST",
                 url: "/like_article",
                 data: {
                     type : "training",
-                    exercise_id : id
+                    training_id : id
+                }
+            })
+        }
+        function send_comment(tr_id) {
+            $.ajax({
+                type: "POST",
+                url: "/commentary",
+                data: {
+                    id : tr_id,
+                    type : "training",
+                    text : $("#comment").val()
+                },
+                dataType: "json",
+                success: function (msg) {
+                    if (msg.objects.length > 0) {
+                        $("#resptext").append("<p>" + msg.objects[0].content + "</p>");
+                    } else {
+                        $("#resptext").html("No results..");
+                    }
                 }
             })
         }
@@ -25,13 +46,17 @@
 </head>
 <body>
     <p><c:out value="${training.getName()}"/></p>
-    <c:forEach var="com" items="${comms}">
-        <p>${com.getContent()}</p>
-    </c:forEach>
+    <div id="resptext">
+        <c:forEach var="com" items="${comms}">
+            <p>${com.getContent()}</p>
+        </c:forEach>
+    </div>
     <form method="post">
-        <p><b>Введите ваш отзыв:</b></p>
-        <p><textarea rows="10" cols="45" name="text"></textarea></p>
-        <p><input type="submit" value="Отправить"></p>
+        <b>Введите ваш отзыв:</b>
+        <br>
+        <textarea rows="10" cols="45" name="text" id="comment"></textarea>
+        <br>
+        <input type="button" value="Отправить" onclick="send_comment(${training.getId()})">
     </form>
     <%--    проверяет наличие лайка--%>
     <c:if test="${flag.equals('true')}">
