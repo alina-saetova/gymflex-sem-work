@@ -48,4 +48,9 @@ public class ExerciseDAO {
         }
         return exercises;
     }
+
+    public void updateLikes(String exercise_id) throws SQLException {
+        int likes = getExerciseById(exercise_id).getCnt_likes() + 1;
+        stmnt.executeUpdate("update exercises set likes=" + likes +" where id=" + exercise_id);
+    }
 }

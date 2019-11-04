@@ -10,13 +10,17 @@
 <html lang="ru">
 <head>
     <title>Title</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
     <script type="text/javascript">
         function like(id) {
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.open("POST", "/like_article", true);
-            xmlhttp.setRequestHeader("Content-Type",
-                "application/x-www-form-urlencoded");
-            xmlhttp.send("type=exercise" + "&exercise_id=" + id);
+            $.ajax({
+                type: "POST",
+                url: "/like_article",
+                data: {
+                    type : "exercise",
+                    exercise_id : id
+                }
+            })
         }
     </script>
 </head>
@@ -31,17 +35,18 @@
         <p><input type="submit" value="Отправить"></p>
     </form>
 <%--    проверяет наличие лайка--%>
-    <c:if test="${flag.equals('true')}">
-        <p>сохранено</p>
-    </c:if>
-    <c:if test="${flag.equals('false')}">
-        <form method="post">
-            <input type="button" value="типа лайк" onclick="like(${exercise.getId()})">
-        </form>
-    </c:if>
-    <c:if test="${flag.equals('no_auth')}">
-        <p>юзер не авторизован</p>
-    </c:if>
-
+    <div id="like_button">
+        <c:if test="${flag.equals('true')}">
+            <p>сохранено</p>
+        </c:if>
+        <c:if test="${flag.equals('false')}">
+            <form method="post">
+                <input type="button" value="типа лайк" onclick="like(${exercise.getId()})">
+            </form>
+        </c:if>
+        <c:if test="${flag.equals('no_auth')}">
+            <p>юзер не авторизован</p>
+        </c:if>
+    </div>
 </body>
 </html>

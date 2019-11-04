@@ -4,9 +4,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class LikeArticleServlet extends HttpServlet {
+
+    SavedExerciseDAO sed = new SavedExerciseDAO();
+    SavedTrainingDAO std = new SavedTrainingDAO();
+    TrainingDAO td = new TrainingDAO();
+    ExerciseDAO ed = new ExerciseDAO();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doGet(req, resp);
@@ -15,17 +20,16 @@ public class LikeArticleServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String type = req.getParameter("type");
-        Statement st = null;
-        try {
-            st = ConnectionToDatabase.getConnection().createStatement();
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
         User user = (User) req.getSession().getAttribute("current_user");
         if (type.equals("exercise")) {
             String exercise_id = req.getParameter("exercise_id");
             try {
-                st.executeUpdate("insert into fav_exercise_user values (" + exercise_id + ", " + user.getId() + ");");
+                sed.insert(exercise_id, user.getId());
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            try {
+                ed.updateLikes(exercise_id);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -33,10 +37,16 @@ public class LikeArticleServlet extends HttpServlet {
         else {
             String training_id = req.getParameter("training_id");
             try {
-                st.executeUpdate("insert into fav_training_user values (" + training_id + ", " + user.getId() + ");");
+                std.insert(training_id, user.getId());
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            try {
+                td.updateLikes(training_id);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
+
     }
 }

@@ -38,4 +38,8 @@ public class SavedExerciseDAO {
         }
         return ids;
     }
+
+    public void insert(String exercise_id, String user_id) throws SQLException {
+        stmnt.executeUpdate("insert into fav_exercise_user values (" + exercise_id + ", " + user_id + ");");
+    }
 }

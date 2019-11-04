@@ -50,4 +50,9 @@ public class TrainingDAO {
         }
         return trs;
     }
+
+    public void updateLikes(String trainings_id) throws SQLException {
+        int likes = getTrainingById(trainings_id).getCnt_likes() + 1;
+        stmnt.executeUpdate("update trainings set cnt_likes=" + likes +" where id=" + trainings_id);
+    }
 }

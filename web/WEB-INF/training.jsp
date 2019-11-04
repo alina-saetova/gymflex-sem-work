@@ -12,11 +12,14 @@
     <title>Title</title>
     <script type="text/javascript">
         function like(id) {
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.open("POST", "/like_article", true);
-            xmlhttp.setRequestHeader("Content-Type",
-                "application/x-www-form-urlencoded");
-            xmlhttp.send("type=training" + "&training_id=" + id);
+            $.ajax({
+                type: "POST",
+                url: "/like_article",
+                data: {
+                    type : "training",
+                    exercise_id : id
+                }
+            })
         }
     </script>
 </head>

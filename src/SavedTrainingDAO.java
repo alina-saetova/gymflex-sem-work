@@ -36,4 +36,8 @@ public class SavedTrainingDAO {
         }
         return ids;
     }
+
+    public void insert(String training_id, String user_id) throws SQLException {
+        stmnt.executeUpdate("insert into fav_training_user values (" + training_id + ", " + user_id+ ");");
+    }
 }

@@ -22,7 +22,7 @@
         <br>
         <label>Фото  </label><input type="file" name="photo"><br>
         <br>
-        <input type="submit" value="Зарегистрироваться">
+        <input type="submit" value="Зарегистрироваться" onclick="">
     </form>
 </body>
 </html>
