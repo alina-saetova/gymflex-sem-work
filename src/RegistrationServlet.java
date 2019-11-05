@@ -16,6 +16,7 @@ import java.sql.Statement;
 public class RegistrationServlet extends HttpServlet {
 
     UserDAO ud = new UserDAO();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
         String name = request.getParameter("name");
@@ -27,40 +28,43 @@ public class RegistrationServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Statement statement = null;
-        try {
-            statement = ConnectionToDatabase.getConnection().createStatement();
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
         String login = req.getParameter("login");
         String firstName = req.getParameter("first_name");
         String lastName = req.getParameter("last_name");
         String password = req.getParameter("password");
-        Part p = req.getPart("photo");
-        String localdir = "uploads";
-        String pathDir = getServletContext().getRealPath("") + File.separator + localdir;
-        File dir = new File(pathDir);
-        if (!dir.exists()) {
-            dir.mkdir();
-        }
-        String[] filename_data = p.getSubmittedFileName().split("\\.");
-        String filename = Math.random() + "." + filename_data[filename_data.length - 1];
-        String fullpath = pathDir + File.separator + filename;
-        p.write(fullpath);
-        String photo = "/" + localdir + "/" + filename;
-        try {
-            statement.executeUpdate("insert into users (firstname, lastname, login, password, photo) VALUES ('" +
-                    firstName +"', '" + lastName + "', '" + login + "', '" + password + "', '" + photo + "')");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        try {
-            req.getSession().setAttribute("current_user", ud.getUserByLogin(login));
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        resp.sendRedirect("/profile");
+//        try {
+////            if (ud.checkLogin(login)) {
+////                resp.getWriter().write("true");
+////            }
+////            else {
+                Part p = req.getPart("photo");
+                String localdir = "uploads";
+                String pathDir = getServletContext().getRealPath("") + File.separator + localdir;
+                File dir = new File(pathDir);
+                if (!dir.exists()) {
+                    dir.mkdir();
+                }
+                String[] filename_data = p.getSubmittedFileName().split("\\.");
+                String filename = Math.random() + "." + filename_data[filename_data.length - 1];
+                String fullpath = pathDir + File.separator + filename;
+                p.write(fullpath);
+                String photo = "/" + localdir + "/" + filename;
 
+                try {
+                    ud.insert(firstName, lastName, login, password, photo);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    req.getSession().setAttribute("current_user", ud.getUserByLogin(login));
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("ar");;
+                resp.sendRedirect("/profile");
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
     }
 }

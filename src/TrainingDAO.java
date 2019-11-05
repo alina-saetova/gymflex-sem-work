@@ -1,23 +1,23 @@
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TrainingDAO {
 
-    private Statement stmnt;
+    private Connection connection;
 
     {
         try {
-            stmnt = ConnectionToDatabase.getConnection().createStatement();
+            connection = ConnectionToDatabase.getConnection();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
 
     public Training getTrainingById(String id) throws SQLException {
-        ResultSet rs = stmnt.executeQuery("select * from trainings where id=" + id);
+        PreparedStatement ps = connection.prepareStatement("select * from trainings where id = ?");
+        ps.setInt(1, Integer.parseInt(id));
+        ResultSet rs = ps.executeQuery();
         Training t = null;
         while (rs.next()) {
             t = new Training(rs.getString("id"), rs.getString("name"),
@@ -29,7 +29,8 @@ public class TrainingDAO {
 
 
     public List<Training> getAllTrainings() throws SQLException {
-        ResultSet rs = stmnt.executeQuery("select * from trainings");
+        PreparedStatement ps = connection.prepareStatement("select * from trainings");
+        ResultSet rs = ps.executeQuery();
         List<Training> trs = new ArrayList<>();
         while (rs.next()) {
             trs.add(new Training(rs.getString("id"), rs.getString("name"),
@@ -40,8 +41,11 @@ public class TrainingDAO {
     }
 
     public List<Training> getTrainingsByType(String gender, String purpose, String location) throws SQLException {
-        ResultSet rs = stmnt.executeQuery("select * from trainings where gender = '" + gender + "' AND purpose = '" + purpose
-                + "' AND location = '" + location + "'");
+        PreparedStatement ps = connection.prepareStatement("select * from trainings where gender = ? AND purpose = ? AND location = ?");
+        ps.setString(1, gender);
+        ps.setString(2, purpose);
+        ps.setString(3, location);
+        ResultSet rs = ps.executeQuery();
         List<Training> trs = new ArrayList<>();
         while (rs.next()) {
             trs.add(new Training(rs.getString("id"), rs.getString("name"),
@@ -53,6 +57,9 @@ public class TrainingDAO {
 
     public void updateLikes(String trainings_id) throws SQLException {
         int likes = getTrainingById(trainings_id).getCnt_likes() + 1;
-        stmnt.executeUpdate("update trainings set cnt_likes=" + likes +" where id=" + trainings_id);
+        PreparedStatement ps = connection.prepareStatement("update trainings set cnt_likes = ? where id = ?");
+        ps.setInt(1, likes);
+        ps.setInt(2, Integer.parseInt(trainings_id));
+        ps.execute();
     }
 }

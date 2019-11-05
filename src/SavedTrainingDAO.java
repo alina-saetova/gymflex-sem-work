@@ -1,27 +1,29 @@
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SavedTrainingDAO {
 
-    private Statement stmnt;
+    private UserDAO ud = new UserDAO();
+    private Connection connection;
 
     {
         try {
-            stmnt = ConnectionToDatabase.getConnection().createStatement();
+            connection = ConnectionToDatabase.getConnection();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
 
     public String checkLike(String user_id, String training_id) throws SQLException {
-        if (user_id == null) {
+        PreparedStatement ps = connection.prepareStatement("select * from fav_training_user " +
+                "where training_id = ? AND user_id = ?");
+        ps.setInt(1, Integer.parseInt(training_id));
+        ps.setInt(2, Integer.parseInt(user_id));
+        if (ud.getUserById(user_id) == null) {
             return "no_auth";
         }
-        ResultSet rs = stmnt.executeQuery("select * from fav_training_user " +
-                "where training_id = " + training_id + " AND user_id = " + user_id + ";");
+        ResultSet rs = ps.executeQuery();
         if (rs.next()) {
             return "true";
         }
@@ -29,8 +31,10 @@ public class SavedTrainingDAO {
     }
 
     public List<String> getSavedTrainingsId(User user) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement("select * from fav_training_user where user_id = ?");
+        ps.setInt(1, Integer.parseInt(user.getId()));
         List<String> ids = new ArrayList<>();
-        ResultSet rs = stmnt.executeQuery("select * from fav_training_user where user_id = " + user.getId());
+        ResultSet rs = ps.executeQuery();
         while (rs.next()) {
             ids.add(rs.getString("training_id"));
         }
@@ -38,6 +42,9 @@ public class SavedTrainingDAO {
     }
 
     public void insert(String training_id, String user_id) throws SQLException {
-        stmnt.executeUpdate("insert into fav_training_user values (" + training_id + ", " + user_id+ ");");
+        PreparedStatement ps = connection.prepareStatement("insert into fav_training_user values (?, ?)");
+        ps.setInt(1, Integer.parseInt(training_id));
+        ps.setInt(2, Integer.parseInt(user_id));
+        ps.execute();
     }
 }

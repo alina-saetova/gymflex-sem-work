@@ -1,23 +1,23 @@
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ExerciseDAO {
 
-    private Statement stmnt;
+    private Connection connection;
 
     {
         try {
-            stmnt = ConnectionToDatabase.getConnection().createStatement();
+            connection = ConnectionToDatabase.getConnection();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
 
     public Exercise getExerciseById(String id) throws SQLException {
-        ResultSet rs = stmnt.executeQuery("select * from exercises where id=" + id);
+        PreparedStatement ps = connection.prepareStatement("select * from exercises where id = ?");
+        ps.setInt(1, Integer.parseInt(id));
+        ResultSet rs = ps.executeQuery();
         Exercise e = null;
         while (rs.next()) {
             e = new Exercise(rs.getString("id"), rs.getString("name"),
@@ -28,7 +28,8 @@ public class ExerciseDAO {
     }
 
     public List<Exercise> getAllExercises() throws SQLException {
-        ResultSet rs = stmnt.executeQuery("select * from exercises");
+        PreparedStatement ps = connection.prepareStatement("select * from exercises");
+        ResultSet rs = ps.executeQuery();
         List<Exercise> ex = new ArrayList<>();
         while (rs.next()) {
             ex.add(new Exercise(rs.getString("id"), rs.getString("name"),
@@ -39,7 +40,9 @@ public class ExerciseDAO {
     }
 
     public List<Exercise> getExercisesByType(String type) throws SQLException {
-        ResultSet rs = stmnt.executeQuery("select * from exercises where type = '" + type + "'");
+        PreparedStatement ps = connection.prepareStatement("select * from exercises where type = ?");
+        ps.setString(1, type);
+        ResultSet rs = ps.executeQuery();
         List<Exercise> exercises = new ArrayList<>();
         while (rs.next()) {
             exercises.add(new Exercise(rs.getString("id"), rs.getString("name"),
@@ -51,6 +54,9 @@ public class ExerciseDAO {
 
     public void updateLikes(String exercise_id) throws SQLException {
         int likes = getExerciseById(exercise_id).getCnt_likes() + 1;
-        stmnt.executeUpdate("update exercises set likes=" + likes +" where id=" + exercise_id);
+        PreparedStatement ps = connection.prepareStatement("update exercises set likes = ?  where id = ?");
+        ps.setInt(1, likes);
+        ps.setInt(2, Integer.parseInt(exercise_id));
+        ps.execute();
     }
 }

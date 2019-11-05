@@ -13,7 +13,6 @@
     <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
     <script type="text/javascript">
         function like(id) {
-            alert(2);
             $.ajax({
                 type: "POST",
                 url: "/like_article",
