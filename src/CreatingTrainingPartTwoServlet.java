@@ -29,10 +29,8 @@ public class CreatingTrainingPartTwoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int i = Integer.parseInt(req.getParameter("ex_num"));
         String tr_id = req.getParameter("tr_id");
-        System.out.println("i=" + i);
         for (int j = 1; j <= i; j++) {
             String ex_name = req.getParameter("" + j + "name");
-            System.out.println(ex_name);
             String reps_num = req.getParameter("" + j + "reps");
             try {
                 ued.createExercise(tr_id, ex_name, reps_num);

@@ -238,6 +238,15 @@
         <url-pattern>/delete_article</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>logout</servlet-name>
+        <servlet-class>LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
     <filter>
         <filter-name>FormEncodingSetterFilter</filter-name>
         <filter-class>FormEncodingSetterFilter</filter-class>

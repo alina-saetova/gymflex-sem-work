@@ -7,41 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67f3aaba-9a52-41ab-9818-75f28891296f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/LogoutServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/CommentaryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/CommentaryDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/ExerciseDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/ExerciseDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/ExerciseServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/ExerciseServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/RegistrationServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/RegistrationServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/SavedExerciseDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/SavedExerciseDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/SavedTrainingDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/SavedTrainingDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/TrainingDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/TrainingDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/UserExerciseDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/UserExerciseDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/UserTrainingDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/UserTrainingDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/registration.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/registration.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/training.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/training.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web-sport/CommentaryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/CommentaryDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web-sport/ExerciseDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/ExerciseDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web-sport/ExerciseServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/ExerciseServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web-sport/RegistrationServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/RegistrationServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web-sport/SavedExerciseDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/SavedExerciseDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web-sport/SavedTrainingDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/SavedTrainingDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web-sport/TrainingDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/TrainingDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web-sport/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web-sport/UserExerciseDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/UserExerciseDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web-sport/UserTrainingDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/UserTrainingDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CommentaryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommentaryDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ExerciseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ExerciseDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ExerciseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ExerciseServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegistrationServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SavedExerciseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SavedExerciseDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SavedTrainingDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SavedTrainingDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TrainingDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TrainingDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserExerciseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserExerciseDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserTrainingDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserTrainingDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/registration.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/registration.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/training.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/training.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/CreatingTrainingPartTwoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/CreatingTrainingPartTwoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/profile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web-sport/CreatingTrainingPartTwoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/CreatingTrainingPartTwoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CreatingTrainingPartTwoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CreatingTrainingPartTwoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/profile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -271,17 +245,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@7651794e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@7651794e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@655f2c40" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -309,7 +273,7 @@
       <workItem from="1572933750147" duration="505000" />
       <workItem from="1572949752055" duration="41000" />
       <workItem from="1572949809186" duration="69000" />
-      <workItem from="1572949901570" duration="15811000" />
+      <workItem from="1572949901570" duration="17733000" />
     </task>
     <servers />
   </component>

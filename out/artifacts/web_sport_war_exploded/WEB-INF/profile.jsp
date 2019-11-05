@@ -113,5 +113,8 @@
             <input type="button"  value="Удалить" onclick="delete_own_training(${c_tr.key.getId()});remove(${c_tr.key.getId()})">
         </div>
     </c:forEach>
+    <form method="post">
+        <input type="submit" value="log out" formaction="/logout">
+    </form>
 </body>
 </html>
