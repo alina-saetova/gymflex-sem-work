@@ -15,7 +15,7 @@
 
     <servlet>
         <servlet-name>login_page</servlet-name>
-        <jsp-file>/WEB-INF/login.jsp</jsp-file>
+        <jsp-file>/WEB-INF/templates/login.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>login_page</servlet-name>
@@ -33,7 +33,7 @@
 
     <servlet>
         <servlet-name>registration_page</servlet-name>
-        <jsp-file>/WEB-INF/registration.jsp</jsp-file>
+        <jsp-file>/WEB-INF/templates/registration.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>registration_page</servlet-name>
@@ -51,7 +51,7 @@
 
     <servlet>
         <servlet-name>profile_page</servlet-name>
-        <jsp-file>/WEB-INF/profile.jsp</jsp-file>
+        <jsp-file>/WEB-INF/templates/profile.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>profile_page</servlet-name>
@@ -69,7 +69,7 @@
 
     <servlet>
         <servlet-name>exercises_section_page</servlet-name>
-        <jsp-file>/WEB-INF/exercises_section.jsp</jsp-file>
+        <jsp-file>/WEB-INF/templates/exercises_section.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>exercises_section_page</servlet-name>
@@ -96,7 +96,7 @@
 
     <servlet>
         <servlet-name>exercise_page</servlet-name>
-        <jsp-file>/WEB-INF/exercise.jsp</jsp-file>
+        <jsp-file>/WEB-INF/templates/exercise.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>exercise_page</servlet-name>
@@ -114,7 +114,7 @@
 
     <servlet>
         <servlet-name>trainings_section_page</servlet-name>
-        <jsp-file>/WEB-INF/trainings_section.jsp</jsp-file>
+        <jsp-file>/WEB-INF/templates/trainings_section.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>trainings_section_page</servlet-name>
@@ -132,7 +132,7 @@
 
     <servlet>
         <servlet-name>training_page</servlet-name>
-        <jsp-file>/WEB-INF/training.jsp</jsp-file>
+        <jsp-file>/WEB-INF/templates/training.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>training_page</servlet-name>
@@ -150,7 +150,7 @@
 
     <servlet>
         <servlet-name>calculator_page</servlet-name>
-        <jsp-file>/WEB-INF/calculator.jsp</jsp-file>
+        <jsp-file>/WEB-INF/templates/calculator.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>calculator_page</servlet-name>
@@ -168,7 +168,7 @@
 
     <servlet>
         <servlet-name>create_training_one_page</servlet-name>
-        <jsp-file>/WEB-INF/create_training_title.jsp</jsp-file>
+        <jsp-file>/WEB-INF/templates/create_training_title.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>create_training_one_page</servlet-name>
@@ -186,7 +186,7 @@
 
     <servlet>
         <servlet-name>create_training_two_page</servlet-name>
-        <jsp-file>/WEB-INF/create_training_exs.jsp</jsp-file>
+        <jsp-file>/WEB-INF/templates/create_training_exs.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>create_training_two_page</servlet-name>
@@ -195,11 +195,10 @@
 
     <servlet-mapping>
         <servlet-name>default</servlet-name>
-        <url-pattern>*.css</url-pattern>
         <url-pattern>*.js</url-pattern>
         <url-pattern>*.jpg</url-pattern>
         <url-pattern>*.png</url-pattern>
-
+        <url-pattern>*.css</url-pattern>
     </servlet-mapping>
 
     <servlet>
