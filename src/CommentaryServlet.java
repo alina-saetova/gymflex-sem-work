@@ -39,7 +39,7 @@ public class CommentaryServlet extends HttpServlet {
         Commentary commentary = null;
         try {
             commentary = new Commentary(id, user_id, article_id, date, content, type);
-        } catch (ParseException e) {
+        } catch (ParseException | SQLException e) {
             e.printStackTrace();
         }
         JSONArray ja = new JSONArray();
@@ -47,5 +47,6 @@ public class CommentaryServlet extends HttpServlet {
         JSONObject jo = new JSONObject();
         jo.put("objects", ja);
         resp.setContentType("text/json");
-        resp.getWriter().write(jo.toString());    }
+        resp.getWriter().write(jo.toString());
+    }
 }

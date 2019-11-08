@@ -19,57 +19,9 @@
           integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <title>Регистрация</title>
     <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
-<%--    <script type="text/javascript">--%>
-<%--        function check_login() {--%>
-<%--            $.ajax({--%>
-<%--                type: "POST",--%>
-<%--                url: "/registration",--%>
-<%--                data: $('#reg').serialize(),--%>
-<%--                success: function (msg) {--%>
-<%--                    if (msg == 'true') {--%>
-<%--                        $('#ans').html("");--%>
-<%--                        $('#ans').append("<p>этот логин занят</p>");--%>
-<%--                    }--%>
-<%--                }--%>
-<%--            })--%>
-<%--        }--%>
-<%--    </script>--%>
 </head>
 <body class="body-with-img">
-<%--    <form method="post"  name="regform" id="reg" enctype="multipart/form-data">--%>
-<%--        <label>Логин  </label><input type="text" name="login" id="login"><br>--%>
-<%--        <br>--%>
-<%--        <label>Имя   </label><input type="text" name="first_name"><br>--%>
-<%--        <br>--%>
-<%--        <label>Фамилия  </label><input type="text" name="last_name"><br>--%>
-<%--        <br>--%>
-<%--        <label>Пароль  </label><input type="password" name="password"><br>--%>
-<%--        <br>--%>
-<%--        <label>Фото  </label><input type="file" name="photo"><br>--%>
-<%--        <br>--%>
-<%--        <input type="submit" value="Зарегистрироваться">--%>
-<%--    </form>--%>
-<%--    <div id="ans">--%>
-
-<%--    </div>--%>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
-    <a class="navbar-brand" href="start_page.html">GymFlex</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="exercises_page.html">Упражнения</a></li>
-            <li class="nav-item"><a class="nav-link" href="tranings_page.html">Тренировки</a></li>
-            <li class="nav-item"><a class="nav-link" href="calc_page.html">Рассчет калорий</a></li>
-            <li class="nav-item"><a class="nav-link" href="add_first_page.html">Создать тренировку</a></li>
-            <li class="nav-item"><a class="nav-link" href="profile_page.html">Профиль</a></li>
-        </ul>
-    </div>
-</nav>
-
+<%@include file= "includes/nav.jsp"%>
 <div class="container type2">
     <div class="d-flex justify-content-center h-100">
         <div class="card form-card">
@@ -155,10 +107,6 @@
         </div>
     </div>
 </div>
-<footer>
-    <div>
-        <small>Спорт - это жизнь ©</small>
-    </div>
-</footer>
+<%@include file= "includes/footer.jsp"%>
 </body>
 </html>

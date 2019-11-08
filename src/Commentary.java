@@ -1,3 +1,4 @@
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -6,8 +7,12 @@ import java.util.Date;
 public class Commentary {
 
     private String id;
-    private String user_id;
+    private User user;
     private String article_id;
+    private String type;
+    private Date date;
+    private String content;
+    private UserDAO ud = new UserDAO();
 
     public String getType() {
         return type;
@@ -17,14 +22,9 @@ public class Commentary {
         this.type = type;
     }
 
-    private String type;
-
     public void setDate(Date date) {
         this.date = date;
     }
-
-    private Date date;
-    private String content;
 
     public String getId() {
         return id;
@@ -34,12 +34,12 @@ public class Commentary {
         this.id = id;
     }
 
-    public String getUser_id() {
-        return user_id;
+    public User getUser() {
+        return user;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setUser(String user_id) throws SQLException {
+        user = ud.getUserById(user_id);
     }
 
     public String getArticle_id() {
@@ -54,7 +54,6 @@ public class Commentary {
         return date;
     }
 
-
     public String getContent() {
         return content;
     }
@@ -67,7 +66,7 @@ public class Commentary {
     public String toString() {
         return "Commentary{" +
                 "id='" + id + '\'' +
-                ", user_id='" + user_id + '\'' +
+                ", user_id='" + user.getId() + '\'' +
                 ", article_id='" + article_id + '\'' +
                 ", date='" + date + '\'' +
                 ", content='" + content + '\'' +
@@ -75,15 +74,13 @@ public class Commentary {
                 '}';
     }
 
-    public Commentary(String id, String user_id, String article_id, Date date, String content, String type) throws ParseException {
+    public Commentary(String id, String user_id, String article_id, Date date, String content, String type) throws ParseException, SQLException {
         this.id = id;
-        this.user_id = user_id;
+        user = ud.getUserById(user_id);
         this.article_id = article_id;
         this.date = date;
         this.content = content;
         this.type = type;
     }
-
-
 
 }

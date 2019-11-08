@@ -52,6 +52,17 @@ public class ExerciseDAO {
         return exercises;
     }
 
+    public List<Exercise> getExercisesFromTraining(String training_id) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement("select * from exercise_training where training_id = ?");
+        ps.setInt(1, Integer.parseInt(training_id));
+        ResultSet rs = ps.executeQuery();
+        List<Exercise> exercises = new ArrayList<>();
+        while (rs.next()) {
+            exercises.add(getExerciseById(rs.getString("exercise_id")));
+        }
+        return exercises;
+    }
+
     public void updateLikes(String exercise_id) throws SQLException {
         int likes = getExerciseById(exercise_id).getCnt_likes() + 1;
         PreparedStatement ps = connection.prepareStatement("update exercises set likes = ?  where id = ?");

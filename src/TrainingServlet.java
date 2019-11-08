@@ -1,3 +1,4 @@
+import freemarker.core.JSONOutputFormat;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -18,6 +19,7 @@ public class TrainingServlet extends HttpServlet {
     TrainingDAO td = new TrainingDAO();
     CommentaryDAO cd = new CommentaryDAO();
     SavedTrainingDAO std = new SavedTrainingDAO();
+    ExerciseDAO ed = new ExerciseDAO();
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
@@ -39,19 +41,27 @@ public class TrainingServlet extends HttpServlet {
         } catch (SQLException | ParseException ex) {
             ex.printStackTrace();
         }
-        User user = (User) req.getSession().getAttribute("current_user");
-        String user_id = null;
-        if (user != null) {
-            user_id = user.getId();
-        }
-        String flag = "";
+
+        List<Exercise> exercises = new ArrayList<>();
         try {
-            flag = std.checkLike(user_id, id);
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+            exercises = ed.getExercisesFromTraining(id);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+        User user = (User) req.getSession().getAttribute("current_user");
+        String flag = "";
+        if (user != null) {
+            try {
+                flag = std.checkLike(user.getId(), id);
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+
+        req.setAttribute("user", user);
         req.setAttribute("flag", flag);
         req.setAttribute("comms", comms);
+        req.setAttribute("exercises", exercises);
         req.setAttribute("training", t);
         resp.setContentType("text/html");
         RequestDispatcher rd = req.getRequestDispatcher("/training_page");

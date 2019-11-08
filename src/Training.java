@@ -24,7 +24,7 @@ public class Training {
         this.name = name;
     }
 
-    public String getIngo() {
+    public String getInfo() {
         return info;
     }
 

@@ -7,11 +7,13 @@ import java.io.IOException;
 import java.util.TreeMap;
 
 public class CalculatorServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         RequestDispatcher rd = request.getRequestDispatcher("/calculator_page");
-        rd.forward(request, response);    }
+        rd.forward(request, response);
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -5,6 +5,7 @@ public class User {
     private String lastName;
     private String login;
     private String password;
+    private String photo;
 
     public String getPhoto() {
         return photo;
@@ -14,7 +15,6 @@ public class User {
         this.photo = photo;
     }
 
-    private String photo;
 
     @Override
     public String toString() {
