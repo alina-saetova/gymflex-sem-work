@@ -27,7 +27,6 @@ public class EditProfileServlet extends HttpServlet {
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        System.out.println(lastname);
         //UPDATE films SET kind = 'Dramatic' WHERE kind = 'Drama';
         User user = (User) req.getSession().getAttribute("current_user");
         try {

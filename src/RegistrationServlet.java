@@ -60,7 +60,6 @@ public class RegistrationServlet extends HttpServlet {
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-                System.out.println("ar");;
                 resp.sendRedirect("/profile");
 //            }
 //        } catch (SQLException e) {

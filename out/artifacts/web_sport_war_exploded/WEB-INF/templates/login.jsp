@@ -40,32 +40,6 @@
     </script>
 </head>
 <body class="body-with-img">
-<%--    <form method="post">--%>
-<%--        <table>--%>
-<%--            <tr>--%>
-<%--                <td>--%>
-<%--                    <label for="loginField">Логин</label>--%>
-<%--                </td>--%>
-<%--                <td>--%>
-<%--                    <input id="loginField" type="text" name="login">--%>
-<%--                </td>--%>
-<%--            </tr>--%>
-<%--            <tr>--%>
-<%--                <td>--%>
-<%--                    <label for="passwordField">Пароль</label>--%>
-<%--                </td>--%>
-<%--                <td>--%>
-<%--                    <input id="passwordField" type="password" name="password">--%>
-<%--                </td>--%>
-<%--            </tr>--%>
-<%--            <tr>--%>
-<%--                <td colspan="2" style="text-align: center">--%>
-<%--                    <input type="button" value="Log in" onclick="check()">--%>
-<%--                </td>--%>
-<%--            </tr>--%>
-<%--        </table>--%>
-<%--    </form>--%>
-<%--    <p id="display"></p>--%>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
     <a class="navbar-brand" href="start_page.html">GymFlex</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
