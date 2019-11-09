@@ -21,7 +21,7 @@ public class SavedTrainingDAO {
         ps.setInt(1, Integer.parseInt(training_id));
         ps.setInt(2, Integer.parseInt(user_id));
         if (ud.getUserById(user_id) == null) {
-            return "no_auth";
+            return "true";
         }
         ResultSet rs = ps.executeQuery();
         if (rs.next()) {

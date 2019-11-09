@@ -44,8 +44,6 @@ public class ProfileServlet extends HttpServlet {
                     e.printStackTrace();
                 }
             }
-            request.setAttribute("saved_trainings", saved_trainings);
-
             List<String> ex_ids = new ArrayList<>();
             try {
                 ex_ids = sed.getSavedExercisesId(user);
@@ -76,6 +74,7 @@ public class ProfileServlet extends HttpServlet {
             }
             request.setAttribute("map", map);
             request.setAttribute("saved_exercises", saved_exercises);
+            request.setAttribute("saved_trainings", saved_trainings);
             request.setAttribute("user", user);
             response.setContentType("text/html");
             RequestDispatcher rd = request.getRequestDispatcher("/profile_page");

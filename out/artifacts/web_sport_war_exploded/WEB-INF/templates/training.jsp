@@ -26,7 +26,8 @@
                     type : "training",
                     training_id : id
                 }
-            })
+            });
+            alert('тренировка сохранена')
         }
         function send_comment(tr_id) {
             $.ajax({
@@ -68,31 +69,6 @@
 </head>
 <body class="body-with-img">
 <%@include file= "includes/nav.jsp"%>
-<%--    <p><c:out value="${training.getName()}"/></p>--%>
-<%--    <div id="resptext">--%>
-<%--        <c:forEach var="com" items="${comms}">--%>
-<%--            <p>${com.getContent()}</p>--%>
-<%--        </c:forEach>--%>
-<%--    </div>--%>
-<%--    <form method="post">--%>
-<%--        <b>Введите ваш отзыв:</b>--%>
-<%--        <br>--%>
-<%--        <textarea rows="10" cols="45" name="text" id="comment"></textarea>--%>
-<%--        <br>--%>
-<%--        <input type="button" value="Отправить" onclick="send_comment(${training.getId()})">--%>
-<%--    </form>--%>
-<%--    проверяет наличие лайка&ndash --%>
-<%--    <c:if test="${flag.equals('true')}">--%>
-<%--        <p>сохранено</p>--%>
-<%--    </c:if>--%>
-<%--    <c:if test="${flag.equals('false')}">--%>
-<%--        <form method="post">--%>
-<%--            <input type="button" value="типа лайк" onclick="like(${training.getId()})">--%>
-<%--        </form>--%>
-<%--    </c:if>--%>
-<%--    <c:if test="${flag.equals('no_auth')}">--%>
-<%--        <p>юзер не авторизован</p>--%>
-<%--    </c:if>--%>
 <div class="container bootstrap snippet">
     <div class="row">
         <div class="col-sm-10"><h1 class="my-4">     </h1></div>
@@ -101,7 +77,12 @@
         <div class="col-lg-4 col-sm-6 mb-4">
             <div class="list-group-item tr">
                 <div class='like'>
-                    <button class='like-toggle basic'> ♥</button>
+                    <c:if test="${flag.equals('true')}">
+                        <button class='like-toggle basic' disabled onclick="like(${training.getId()})"> ♥ </button>
+                    </c:if>
+                    <c:if test="${flag.equals('false')}">
+                        <button class='like-toggle basic' onclick="like(${training.getId()})"> ♥ </button>
+                    </c:if>
                     <span class='hidden'>${training.getCnt_likes()} likes</span>
                 </div>
             </div>
