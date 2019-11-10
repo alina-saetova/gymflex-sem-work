@@ -35,8 +35,6 @@ public class CreatingTrainingPartOneServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-//        req.setAttribute("training_name", name);
-//        req.setAttribute("exercises_number", num);
         resp.setContentType("text/html");
         resp.sendRedirect("/create_training_two?name=" + name + "&ex_num=" + num + "&tr_id=" + tr_id);
 

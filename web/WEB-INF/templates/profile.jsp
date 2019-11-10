@@ -78,51 +78,6 @@
 </head>
 <body class="body-with-img">
 <%@include file= "includes/nav.jsp"%>
-<%--    <form method="post">--%>
-<%--        <p>First name:</p>--%>
-<%--        <input type="text" id="firstname" value="${user.getFirstName()}">--%>
-<%--        <p>Last name:</p>--%>
-<%--        <input type="text" id="lastname" value="${user.getLastName()}">--%>
-<%--        <p>Login:</p>--%>
-<%--        <input type="text" id="login" value="${user.getLogin()}">--%>
-<%--        <input type="button" name="rewrite" onclick="save()" value="сохранить">--%>
-<%--    </form>--%>
-<%--    <img src="${user.getPhoto()}" width="200">--%>
-<%--    <form method="post">--%>
-<%--        <p>Old password:</p>--%>
-<%--        <input type="text" id="old_password">--%>
-<%--        <p>New password:</p>--%>
-<%--        <input type="text" id="new_password">--%>
-<%--        <input type="button" name="rewrite" onclick="change_password()" value="изменить">--%>
-<%--    </form>--%>
-
-<%--    <p>Сохраненные тренировки</p>--%>
-<%--    <c:forEach var="s_tr" items="${saved_trainings}">--%>
-<%--        <div id="${s_tr.getId()}">--%>
-<%--            <p>${s_tr.getName()}</p>--%>
-<%--            <input type="button" value="Удалить" onclick="delete_training(${s_tr.getId()}); remove(${s_tr.getId()})">--%>
-<%--        </div>--%>
-<%--    </c:forEach>--%>
-<%--    <p>Сохраненные упражнения</p>--%>
-<%--    <c:forEach var="s_ex" items="${saved_exercises}">--%>
-<%--        <div id="${s_ex.getId()}">--%>
-<%--            <p>${s_ex.getName()}</p>--%>
-<%--            <input type="button"  value="Удалить" onclick="delete_exercise(${s_ex.getId()});remove(${s_ex.getId()})">--%>
-<%--        </div>--%>
-<%--    </c:forEach>--%>
-<%--    <p>Свои тренировки</p>--%>
-<%--    <c:forEach var="c_tr" items="${map}">--%>
-<%--        <div id="${c_tr.key.getId()}">--%>
-<%--            <p>${c_tr.key.getName()}</p>--%>
-<%--            <c:forEach var="c_ex" items="${c_tr.value}">--%>
-<%--            <p>${c_ex.getName()} --- ${c_ex.getReps()}</p>--%>
-<%--            </c:forEach>--%>
-<%--            <input type="button"  value="Удалить" onclick="delete_own_training(${c_tr.key.getId()});remove(${c_tr.key.getId()})">--%>
-<%--        </div>--%>
-<%--    </c:forEach>--%>
-<%--    <form method="post">--%>
-<%--        <input type="submit" value="log out" formaction="/logout">--%>
-<%--    </form>--%>
 <div class="container bootstrap snippet">
     <div class="row">
         <div class="col-sm-10"><h1 class="my-4"><strong>Профиль</strong></h1></div>

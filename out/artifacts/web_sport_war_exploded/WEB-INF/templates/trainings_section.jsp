@@ -53,32 +53,6 @@
 </head>
 <body class="body body-with-img">
 <%@include file= "includes/nav.jsp"%>
-<%--    <form method="post" id="muscle_select">--%>
-<%--        <select name="gender" id="gender">--%>
-<%--            <option selected disabled>Выберите пол</option>--%>
-<%--            <option value="female">Женский</option>--%>
-<%--            <option value="male">Мужской</option>--%>
-<%--        </select>--%>
-<%--        <select name="purpose" id="purpose">--%>
-<%--            <option selected disabled>Выберите цель</option>--%>
-<%--            <option value="pohudenie">Похудение</option>--%>
-<%--            <option value="massa">Масса</option>--%>
-<%--            <option value="podderjanie">Поддержание</option>--%>
-<%--        </select>--%>
-<%--        <select name="location" id="location">--%>
-<%--            <option selected disabled>Выберите место тренировки</option>--%>
-<%--            <option value="home">Дома</option>--%>
-<%--            <option value="gym">В зале</option>--%>
-<%--        </select>--%>
-<%--        <p><input type="button" id="sendreq" value="Send" onclick="get()"></p>--%>
-<%--    </form>--%>
-<%--    <div id="resptext">--%>
-<%--        <c:if test="${alltrainings != null}">--%>
-<%--            <c:forEach var="tr" items="${alltrainings}">--%>
-<%--                <p>${tr.getName()}</p>--%>
-<%--            </c:forEach>--%>
-<%--        </c:if>--%>
-<%--    </div>--%>
 <div class="container bootstrap snippet">
     <div class="row">
         <div class="col-sm-10"><h1 class="my-4"><strong>Тренировки</strong></h1></div>

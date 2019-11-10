@@ -3,6 +3,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -10,6 +11,7 @@ import java.sql.Statement;
 public class ChangePasswordServlet extends HttpServlet {
 
     UserDAO ud = new UserDAO();
+    UserService us = new UserService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -18,20 +20,23 @@ public class ChangePasswordServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String oldpassword = req.getParameter("oldpassword");
-        String newpassword = req.getParameter("newpassword");
+        String oldpassword = null;
+        try {
+            oldpassword = us.makeDigest(req.getParameter("oldpassword"));
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        String newpassword = null;
+        try {
+            newpassword = us.makeDigest(req.getParameter("newpassword"));
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
         User user = (User) req.getSession().getAttribute("current_user");
         resp.setContentType("text/xml");
         if (user.getPassword().equals(oldpassword)) {
-            Statement st = null;
             try {
-                st = ConnectionToDatabase.getConnection().createStatement();
-            } catch (SQLException | ClassNotFoundException e) {
-                e.printStackTrace();
-            }
-            try {
-                st.executeUpdate("update users set password = '" + newpassword +
-                        "' where id = " + user.getId());
+                us.updatePassword(newpassword, user.getId());
             } catch (SQLException e) {
                 e.printStackTrace();
             }

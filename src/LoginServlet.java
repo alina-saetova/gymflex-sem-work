@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -15,7 +16,7 @@ import java.sql.Statement;
 public class LoginServlet extends HttpServlet {
 
     UserDAO ud = new UserDAO();
-
+    UserService us = new UserService();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
@@ -25,14 +26,13 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("/profile");
         } else {
             try {
-                if (validatingUser(request.getParameter("login"), request.getParameter("password"))) {
+                if (us.validatingUser(request.getParameter("login"), request.getParameter("password"))) {
                     session.setAttribute("current_user", ud.getUserByLogin(request.getParameter("login")));
                     response.getWriter().println(1);
                 } else {
-                    //ajax
                     response.getWriter().println(0);
                 }
-            } catch (SQLException | ClassNotFoundException e) {
+            } catch (SQLException | NoSuchAlgorithmException e) {
                 e.printStackTrace();
             }
         }
@@ -50,10 +50,4 @@ public class LoginServlet extends HttpServlet {
         }
     }
 
-    private boolean validatingUser(String login, String password) throws SQLException, ClassNotFoundException {
-        Statement st = ConnectionToDatabase.getConnection().createStatement();
-        ResultSet rs = st.executeQuery("select * from users " +
-                "where login = '" + login + "' AND password = '" + password + "'");
-        return rs.next();
-    }
 }

@@ -52,14 +52,16 @@ public class UserDAO {
         ps.execute();
     }
 
-    public boolean checkLogin(String login) throws SQLException {
-        PreparedStatement ps = connection.prepareStatement("select * from users where login = ?");
-        ps.setString(1, login);
-        ResultSet rs = ps.executeQuery();
-        if (rs.next()) {
-            System.out.println(rs.getString("login"));
-            return true;
-        }
-        return false;
-    }
+//    public boolean checkLogin(String login) throws SQLException {
+//        PreparedStatement ps = connection.prepareStatement("select * from users where login = ?");
+//        ps.setString(1, login);
+//        ResultSet rs = ps.executeQuery();
+//        if (rs.next()) {
+//            System.out.println(rs.getString("login"));
+//            return true;
+//        }
+//        return false;
+//    }
+
+
 }
