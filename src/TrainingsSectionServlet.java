@@ -37,6 +37,7 @@ public class TrainingsSectionServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        System.out.println(trainings);
         JSONArray ja = new JSONArray();
         for (Training training: trainings) {
             ja.put(new JSONObject(training));

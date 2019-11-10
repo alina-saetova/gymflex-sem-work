@@ -8,13 +8,16 @@
   <component name="ChangeListManager">
     <list default="true" id="67f3aaba-9a52-41ab-9818-75f28891296f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/LikeArticleServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/LikeArticleServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/create_training_title.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/create_training_title.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/exercise.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/exercise.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web-sport/LikeArticleServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/LikeArticleServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/templates/create_training_exs.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/templates/create_training_exs.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/templates/create_training_title.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/templates/create_training_title.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/templates/exercise.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/templates/exercise.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/ExercisesSectionServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/ExercisesSectionServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/TrainingsSectionServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/TrainingsSectionServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/exercises_section.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/exercises_section.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/trainings_section.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/trainings_section.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web-sport/ExercisesSectionServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/ExercisesSectionServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web-sport/TrainingsSectionServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/TrainingsSectionServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExercisesSectionServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ExercisesSectionServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TrainingsSectionServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TrainingsSectionServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/templates/exercises_section.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/templates/exercises_section.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/templates/trainings_section.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/templates/trainings_section.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,8 +104,8 @@
         <option value="CSS File" />
         <option value="HTML File" />
         <option value="JavaScript File" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -305,7 +308,7 @@
       <workItem from="1573290235491" duration="1002000" />
       <workItem from="1573306072159" duration="3124000" />
       <workItem from="1573310288228" duration="1044000" />
-      <workItem from="1573365991480" duration="5352000" />
+      <workItem from="1573365991480" duration="9673000" />
     </task>
     <servers />
   </component>
