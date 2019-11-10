@@ -1,6 +1,6 @@
 public class User {
 
-    private String id;
+    private int id;
     private String firstName;
     private String lastName;
     private String login;
@@ -27,11 +27,11 @@ public class User {
                 '}';
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -67,7 +67,7 @@ public class User {
         this.password = password;
     }
 
-    public User(String id, String firstName, String lastName, String login, String password, String photo) {
+    public User(int id, String firstName, String lastName, String login, String password, String photo) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;

@@ -30,14 +30,13 @@ public class TrainingsSectionServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         List<Training> trainings = new ArrayList<>();
         try {
             trainings = td.getTrainingsByType(req.getParameter("gender"), req.getParameter("purpose"), req.getParameter("location"));
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println(trainings);
         JSONArray ja = new JSONArray();
         for (Training training: trainings) {
             ja.put(new JSONObject(training));

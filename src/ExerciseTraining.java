@@ -19,7 +19,7 @@ public class ExerciseTraining {
         return exercise;
     }
 
-    public void setExercise(String exercise_id) throws SQLException {
+    public void setExercise(int exercise_id) throws SQLException {
         exercise = ed.getExerciseById(exercise_id);
     }
 
@@ -27,11 +27,11 @@ public class ExerciseTraining {
         return training;
     }
 
-    public void setTraining(String training_id) throws SQLException {
+    public void setTraining(int training_id) throws SQLException {
         training = td.getTrainingById(training_id);
     }
 
-    public ExerciseTraining(String exercise_id, String training_id) throws SQLException {
+    public ExerciseTraining(int exercise_id, int training_id) throws SQLException {
         exercise = ed.getExerciseById(exercise_id);
         training = td.getTrainingById(training_id);
     }

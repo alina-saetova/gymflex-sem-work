@@ -21,8 +21,8 @@ public class UserService {
         byte[] digest = messageDigest.digest();
 
         StringBuffer hexString = new StringBuffer();
-        for (int i = 0;i < digest.length; i++) {
-            hexString.append(Integer.toHexString(0xFF & digest[i]));
+        for (byte b : digest) {
+            hexString.append(Integer.toHexString(0xFF & b));
         }
         return hexString.toString();
     }
@@ -35,19 +35,19 @@ public class UserService {
         return rs.next();
     }
 
-    public void updatePassword(String newpassword, String id) throws SQLException {
+    public void updatePassword(String newpassword, int id) throws SQLException {
         PreparedStatement ps = connection.prepareStatement("update users set password = ? where id = ?");
         ps.setString(1, newpassword);
-        ps.setInt(2, Integer.parseInt(id));
+        ps.setInt(2, id);
         ps.execute();
     }
 
-    public void updateProfile(String firstname, String lastname, String login, String id) throws SQLException {
+    public void updateProfile(String firstname, String lastname, String login, int id) throws SQLException {
         PreparedStatement ps = connection.prepareStatement("update users set firstname = ?, lastname = ?, login = ? where id = ?");
         ps.setString(1, firstname);
         ps.setString(2, lastname);
         ps.setString(3, login);
-        ps.setInt(4, Integer.parseInt(id));
+        ps.setInt(4, id);
         ps.execute();
     }
 }

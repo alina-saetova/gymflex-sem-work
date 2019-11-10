@@ -14,14 +14,14 @@ public class ExerciseDAO {
         }
     }
 
-    public Exercise getExerciseById(String id) throws SQLException {
+    public Exercise getExerciseById(int id) throws SQLException {
         PreparedStatement ps = connection.prepareStatement("select * from exercises where id = ?");
-        ps.setInt(1, Integer.parseInt(id));
+        ps.setInt(1, id);
         ResultSet rs = ps.executeQuery();
         Exercise e = null;
         while (rs.next()) {
-            e = new Exercise(rs.getString("id"), rs.getString("name"),
-                    rs.getString("info"), Integer.parseInt(rs.getString("likes")),
+            e = new Exercise(rs.getInt("id"), rs.getString("name"),
+                    rs.getString("info"), rs.getInt("likes"),
                     rs.getString("photo"), rs.getString("type"));
         }
         return e;
@@ -32,7 +32,7 @@ public class ExerciseDAO {
         ResultSet rs = ps.executeQuery();
         List<Exercise> ex = new ArrayList<>();
         while (rs.next()) {
-            ex.add(new Exercise(rs.getString("id"), rs.getString("name"),
+            ex.add(new Exercise(rs.getInt("id"), rs.getString("name"),
                     rs.getString("info"), Integer.parseInt(rs.getString("likes")),
                     rs.getString("photo"), rs.getString("type")));
         }
@@ -45,30 +45,29 @@ public class ExerciseDAO {
         ResultSet rs = ps.executeQuery();
         List<Exercise> exercises = new ArrayList<>();
         while (rs.next()) {
-            exercises.add(new Exercise(rs.getString("id"), rs.getString("name"),
+            exercises.add(new Exercise(rs.getInt("id"), rs.getString("name"),
                     rs.getString("info"), Integer.parseInt(rs.getString("likes")),
                     rs.getString("photo"), rs.getString("type")));
         }
         return exercises;
     }
 
-    public List<Exercise> getExercisesFromTraining(String training_id) throws SQLException {
+    public List<Exercise> getExercisesFromTraining(int training_id) throws SQLException {
         PreparedStatement ps = connection.prepareStatement("select * from exercise_training where training_id = ?");
-        ps.setInt(1, Integer.parseInt(training_id));
+        ps.setInt(1, training_id);
         ResultSet rs = ps.executeQuery();
         List<Exercise> exercises = new ArrayList<>();
         while (rs.next()) {
-            exercises.add(getExerciseById(rs.getString("exercise_id")));
+            exercises.add(getExerciseById(rs.getInt("exercise_id")));
         }
         return exercises;
     }
 
-    public void updateLikes(String exercise_id) throws SQLException {
+    public void updateLikes(int exercise_id) throws SQLException {
         int likes = getExerciseById(exercise_id).getCnt_likes() + 1;
-        System.out.println(likes);
         PreparedStatement ps = connection.prepareStatement("update exercises set likes = ?  where id = ?");
         ps.setInt(1, likes);
-        ps.setInt(2, Integer.parseInt(exercise_id));
+        ps.setInt(2, exercise_id);
         ps.execute();
     }
 }

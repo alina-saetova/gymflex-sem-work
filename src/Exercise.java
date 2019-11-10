@@ -1,6 +1,6 @@
 public class Exercise {
 
-    private String id;
+    private int id;
     private String name;
     private String info;
     private int cnt_likes;
@@ -27,11 +27,11 @@ public class Exercise {
         this.type = type;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -67,7 +67,7 @@ public class Exercise {
         this.photo = photo;
     }
 
-    public Exercise(String id, String name, String info, int cnt_likes, String photo, String type) {
+    public Exercise(int id, String name, String info, int cnt_likes, String photo, String type) {
         this.id = id;
         this.name = name;
         this.info = info;

@@ -1,19 +1,12 @@
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class ExerciseServlet extends HttpServlet {
@@ -29,7 +22,7 @@ public class ExerciseServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String id = req.getParameter("id");
+        int id = Integer.parseInt(req.getParameter("id"));
         Exercise e = null;
         try {
             e = ed.getExerciseById(id);

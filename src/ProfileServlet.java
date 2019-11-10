@@ -1,6 +1,3 @@
-import freemarker.template.Configuration;
-import freemarker.template.TemplateExceptionHandler;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -30,28 +27,28 @@ public class ProfileServlet extends HttpServlet {
             response.sendRedirect("/login");
         }
         else {
-            List<String> tr_ids = new ArrayList<>();
+            List<Integer> tr_ids = new ArrayList<>();
             try {
                 tr_ids = std.getSavedTrainingsId(user);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
             List<Training> saved_trainings = new ArrayList<>();
-            for (String id : tr_ids) {
+            for (int id : tr_ids) {
                 try {
                     saved_trainings.add(td.getTrainingById(id));
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
-            List<String> ex_ids = new ArrayList<>();
+            List<Integer> ex_ids = new ArrayList<>();
             try {
                 ex_ids = sed.getSavedExercisesId(user);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
             List<Exercise> saved_exercises = new ArrayList<>();
-            for (String id : ex_ids) {
+            for (int id : ex_ids) {
                 try {
                     saved_exercises.add(ed.getExerciseById(id));
                 } catch (SQLException e) {

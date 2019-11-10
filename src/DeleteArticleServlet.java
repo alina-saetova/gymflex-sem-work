@@ -10,6 +10,7 @@ public class DeleteArticleServlet extends HttpServlet {
 
     UserExerciseDAO ued = new UserExerciseDAO();
     UserTrainingDAO utd = new UserTrainingDAO();
+    SavedArticlesService sas = new SavedArticlesService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -19,25 +20,16 @@ public class DeleteArticleServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String type = req.getParameter("type");
-        Statement st = null;
-        try {
-            st = ConnectionToDatabase.getConnection().createStatement();
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
         User user = (User) req.getSession().getAttribute("current_user");
-        String id =  req.getParameter("id");
-        System.out.println(id);
-        System.out.println(type);
+        int id =  Integer.parseInt(req.getParameter("id"));
         if (type.equals("exercise")) {
             try {
-                st.executeUpdate("delete from fav_exercise_user where exercise_id = " + id + " AND user_id = " + user.getId());
+                sas.deleteArticle(id, user.getId(), type);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
         else if (type.equals("own_training")) {
-            System.out.println("qwe");
             try {
                 utd.deleteUserTraining(id);
             } catch (SQLException e) {
@@ -50,9 +42,8 @@ public class DeleteArticleServlet extends HttpServlet {
             }
         }
         else {
-
             try {
-                st.executeUpdate("delete from fav_training_user where training_id = " + id + " AND user_id = " + user.getId());
+                sas.deleteArticle(id, user.getId(), type);
             } catch (SQLException e) {
                 e.printStackTrace();
             }

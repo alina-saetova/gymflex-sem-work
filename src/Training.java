@@ -1,6 +1,6 @@
 public class Training {
 
-    private String id;
+    private int id;
     private String name;
     private String info;
     private int cnt_likes;
@@ -17,11 +17,11 @@ public class Training {
         this.photo = photo;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -88,7 +88,7 @@ public class Training {
 
 
 
-    public Training(String id, String name, String info, int cnt_likes, String gender, String purpose, String location, String photo) {
+    public Training(int id, String name, String info, int cnt_likes, String gender, String purpose, String location, String photo) {
         this.id = id;
         this.name = name;
         this.info = info;

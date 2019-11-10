@@ -1,14 +1,12 @@
 import java.sql.SQLException;
-import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Commentary {
 
-    private String id;
+    private int id;
     private User user;
-    private String article_id;
+    private int article_id;
     private String type;
     private Date date;
     private String content;
@@ -26,11 +24,11 @@ public class Commentary {
         this.date = date;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -38,15 +36,15 @@ public class Commentary {
         return user;
     }
 
-    public void setUser(String user_id) throws SQLException {
+    public void setUser(int user_id) throws SQLException {
         user = ud.getUserById(user_id);
     }
 
-    public String getArticle_id() {
+    public int getArticle_id() {
         return article_id;
     }
 
-    public void setArticle_id(String article_id) {
+    public void setArticle_id(int article_id) {
         this.article_id = article_id;
     }
 
@@ -74,7 +72,7 @@ public class Commentary {
                 '}';
     }
 
-    public Commentary(String id, String user_id, String article_id, Date date, String content, String type) throws ParseException, SQLException {
+    public Commentary(int id, int user_id, int article_id, Date date, String content, String type) throws ParseException, SQLException {
         this.id = id;
         user = ud.getUserById(user_id);
         this.article_id = article_id;

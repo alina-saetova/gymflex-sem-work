@@ -1,22 +1,22 @@
 public class UserTraining {
 
-    private String id;
-    private String user_id;
+    private int id;
+    private int user_id;
     private String name;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getUser_id() {
+    public int getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(String user_id) {
+    public void setUser_id(int user_id) {
         this.user_id = user_id;
     }
 
@@ -37,7 +37,7 @@ public class UserTraining {
                 '}';
     }
 
-    public UserTraining(String id, String user_id, String name) {
+    public UserTraining(int id, int user_id, String name) {
         this.id = id;
         this.user_id = user_id;
         this.name = name;

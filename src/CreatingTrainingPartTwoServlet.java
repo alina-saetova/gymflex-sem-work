@@ -15,7 +15,7 @@ public class CreatingTrainingPartTwoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String num = req.getParameter("ex_num");
         String name = req.getParameter("name");
-        String tr_id = req.getParameter("tr_id");
+        int tr_id = Integer.parseInt(req.getParameter("tr_id"));
         User user = (User) req.getSession().getAttribute("current_user");
         req.setAttribute("name", name);
         req.setAttribute("ex_num", num);
@@ -28,7 +28,7 @@ public class CreatingTrainingPartTwoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int i = Integer.parseInt(req.getParameter("ex_num"));
-        String tr_id = req.getParameter("tr_id");
+        int tr_id = Integer.parseInt(req.getParameter("tr_id"));
         for (int j = 1; j <= i; j++) {
             String ex_name = req.getParameter("" + j + "name");
             String reps_num = req.getParameter("" + j + "reps");

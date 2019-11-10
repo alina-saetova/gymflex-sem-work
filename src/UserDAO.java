@@ -1,5 +1,3 @@
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
 import java.sql.*;
 
 public class UserDAO {
@@ -14,13 +12,13 @@ public class UserDAO {
         }
     }
 
-    public User getUserById(String idUser) throws SQLException {
+    public User getUserById(int idUser) throws SQLException {
         PreparedStatement ps = connection.prepareStatement("select * from users where id = ?");
-        ps.setInt(1, Integer.parseInt(idUser));
+        ps.setInt(1, idUser);
         ResultSet rs = ps.executeQuery();
         User u = null;
         while (rs.next()) {
-            u = new User(rs.getString("id"), rs.getString("firstName"),
+            u = new User(rs.getInt("id"), rs.getString("firstName"),
                     rs.getString("lastName"), rs.getString("login"),
                     rs.getString("password"), rs.getString("photo"));
         }
@@ -34,7 +32,7 @@ public class UserDAO {
         ResultSet rs = ps.executeQuery();
         User u = null;
         while (rs.next()) {
-            u = new User(rs.getString("id"), rs.getString("firstName"),
+            u = new User(rs.getInt("id"), rs.getString("firstName"),
                     rs.getString("lastName"), rs.getString("login"),
                     rs.getString("password"), rs.getString("photo"));
         }

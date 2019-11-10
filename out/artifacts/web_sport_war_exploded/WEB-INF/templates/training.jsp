@@ -25,6 +25,9 @@
                 data: {
                     type : "training",
                     training_id : id
+                },
+                success: function (msg) {
+                    $('#cnt_likes').html("" + msg.toString() + " likes");
                 }
             });
             alert('тренировка сохранена')
@@ -83,7 +86,7 @@
                     <c:if test="${flag.equals('false')}">
                         <button class='like-toggle basic' onclick="like(${training.getId()})"> ♥ </button>
                     </c:if>
-                    <span>${training.getCnt_likes()} likes</span>
+                    <span id="cnt_likes">${training.getCnt_likes()} likes</span>
                 </div>
             </div>
             <c:forEach var="ex" items="${exercises}">

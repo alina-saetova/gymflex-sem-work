@@ -1,5 +1,3 @@
-import org.apache.taglibs.standard.tlv.JstlBaseTLV;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,13 +15,12 @@ public class SavedExerciseDAO {
         }
     }
 
-    public String checkLike(String user_id, String exercise_id) throws SQLException {
+    public String checkLike(int user_id, int exercise_id) throws SQLException {
         PreparedStatement ps = connection.prepareStatement("select * from fav_exercise_user " +
                 "where exercise_id = ? AND user_id = ?");
-        ps.setInt(1, Integer.parseInt(exercise_id));
-        ps.setInt(2, Integer.parseInt(user_id));
+        ps.setInt(1, exercise_id);
+        ps.setInt(2, user_id);
         if (ud.getUserById(user_id) == null) {
-            System.out.println("true");
             return "true";
         }
         ResultSet rs = ps.executeQuery();
@@ -33,21 +30,21 @@ public class SavedExerciseDAO {
         return "false";
     }
 
-    public List<String> getSavedExercisesId(User user) throws SQLException {
+    public List<Integer> getSavedExercisesId(User user) throws SQLException {
         PreparedStatement ps = connection.prepareStatement("select * from fav_exercise_user where user_id = ?");
-        ps.setInt(1, Integer.parseInt(user.getId()));
-        List<String> ids = new ArrayList<>();
+        ps.setInt(1, user.getId());
+        List<Integer> ids = new ArrayList<>();
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
-            ids.add(rs.getString("exercise_id"));
+            ids.add(rs.getInt("exercise_id"));
         }
         return ids;
     }
 
-    public void insert(String exercise_id, String user_id) throws SQLException {
+    public void insert(int exercise_id, int user_id) throws SQLException {
         PreparedStatement ps = connection.prepareStatement("insert into fav_exercise_user values (?, ?)");
-        ps.setInt(1, Integer.parseInt(exercise_id));
-        ps.setInt(2, Integer.parseInt(user_id));
+        ps.setInt(1, exercise_id);
+        ps.setInt(2, user_id);
         ps.execute();
     }
 }

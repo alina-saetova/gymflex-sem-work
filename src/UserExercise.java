@@ -1,30 +1,30 @@
 public class UserExercise {
 
-    private String id;
-    private String utraining_id;
+    private int id;
+    private int utraining_id;
     private String name;
     private String reps;
 
-    public UserExercise(String id, String utraining_id, String name, String reps) {
+    public UserExercise(int id, int utraining_id, String name, String reps) {
         this.id = id;
         this.utraining_id = utraining_id;
         this.name = name;
         this.reps = reps;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getUtraining_id() {
+    public int getUtraining_id() {
         return utraining_id;
     }
 
-    public void setUtraining_id(String utraining_id) {
+    public void setUtraining_id(int utraining_id) {
         this.utraining_id = utraining_id;
     }
 

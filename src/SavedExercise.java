@@ -1,21 +1,21 @@
 public class SavedExercise {
 
-    private String exercise_id;
-    private String user_id;
+    private int exercise_id;
+    private int user_id;
 
-    public String getExercise_id() {
+    public int getExercise_id() {
         return exercise_id;
     }
 
-    public void setExercise_id(String exercise_id) {
+    public void setExercise_id(int exercise_id) {
         this.exercise_id = exercise_id;
     }
 
-    public String getUser_id() {
+    public int getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(String user_id) {
+    public void setUser_id(int user_id) {
         this.user_id = user_id;
     }
 
@@ -27,7 +27,7 @@ public class SavedExercise {
                 '}';
     }
 
-    public SavedExercise(String exercise_id, String user_id) {
+    public SavedExercise(int exercise_id, int user_id) {
         this.exercise_id = exercise_id;
         this.user_id = user_id;
     }

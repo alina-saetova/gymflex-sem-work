@@ -23,7 +23,7 @@ public class LikeArticleServlet extends HttpServlet {
         User user = (User) req.getSession().getAttribute("current_user");
         resp.setContentType("text/html");
         if (type.equals("exercise")) {
-            String exercise_id = req.getParameter("exercise_id");
+            int exercise_id = Integer.parseInt(req.getParameter("exercise_id"));
             try {
                 sed.insert(exercise_id, user.getId());
             } catch (SQLException e) {
@@ -41,7 +41,7 @@ public class LikeArticleServlet extends HttpServlet {
             }
         }
         else {
-            String training_id = req.getParameter("training_id");
+            int training_id = Integer.parseInt(req.getParameter("training_id"));
             try {
                 std.insert(training_id, user.getId());
             } catch (SQLException e) {
@@ -53,7 +53,7 @@ public class LikeArticleServlet extends HttpServlet {
                 e.printStackTrace();
             }
             try {
-                resp.getWriter().println(ed.getExerciseById(training_id).getCnt_likes());
+                resp.getWriter().println(td.getTrainingById(training_id).getCnt_likes());
             } catch (SQLException e) {
                 e.printStackTrace();
             }

@@ -23,14 +23,14 @@ public class CommentaryServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
-        String article_id = request.getParameter("id");
+        int article_id = Integer.parseInt(request.getParameter("id"));
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("current_user");
-        String user_id = user.getId();
+        int user_id = user.getId();
         Date date = new Date();
         String content = request.getParameter("text");
         String type = request.getParameter("type");
-        String id = "";
+        int id = 0;
         try {
             id = cd.insert(user_id, article_id, date, content, type);
         } catch (SQLException e) {

@@ -14,14 +14,14 @@ public class TrainingDAO {
         }
     }
 
-    public Training getTrainingById(String id) throws SQLException {
+    public Training getTrainingById(int id) throws SQLException {
         PreparedStatement ps = connection.prepareStatement("select * from trainings where id = ?");
-        ps.setInt(1, Integer.parseInt(id));
+        ps.setInt(1, id);
         ResultSet rs = ps.executeQuery();
         Training t = null;
         while (rs.next()) {
-            t = new Training(rs.getString("id"), rs.getString("name"),
-                    rs.getString("info"), Integer.parseInt(rs.getString("cnt_likes")),
+            t = new Training(rs.getInt("id"), rs.getString("name"),
+                    rs.getString("info"), rs.getInt("cnt_likes"),
                     rs.getString("gender"), rs.getString("purpose"), rs.getString("location"),
                     rs.getString("photo"));
         }
@@ -34,7 +34,7 @@ public class TrainingDAO {
         ResultSet rs = ps.executeQuery();
         List<Training> trs = new ArrayList<>();
         while (rs.next()) {
-            trs.add(new Training(rs.getString("id"), rs.getString("name"),
+            trs.add(new Training(rs.getInt("id"), rs.getString("name"),
                     rs.getString("info"), Integer.parseInt(rs.getString("cnt_likes")),
                     rs.getString("gender"), rs.getString("purpose"), rs.getString("location"),
                     rs.getString("photo")));
@@ -50,7 +50,7 @@ public class TrainingDAO {
         ResultSet rs = ps.executeQuery();
         List<Training> trs = new ArrayList<>();
         while (rs.next()) {
-            trs.add(new Training(rs.getString("id"), rs.getString("name"),
+            trs.add(new Training(rs.getInt("id"), rs.getString("name"),
                     rs.getString("info"), Integer.parseInt(rs.getString("cnt_likes")),
                     rs.getString("gender"), rs.getString("purpose"), rs.getString("location"),
                     rs.getString("photo")));
@@ -58,11 +58,11 @@ public class TrainingDAO {
         return trs;
     }
 
-    public void updateLikes(String trainings_id) throws SQLException {
+    public void updateLikes(int trainings_id) throws SQLException {
         int likes = getTrainingById(trainings_id).getCnt_likes() + 1;
         PreparedStatement ps = connection.prepareStatement("update trainings set cnt_likes = ? where id = ?");
         ps.setInt(1, likes);
-        ps.setInt(2, Integer.parseInt(trainings_id));
+        ps.setInt(2, trainings_id);
         ps.execute();
     }
 }
