@@ -22,7 +22,8 @@ public class TrainingDAO {
         while (rs.next()) {
             t = new Training(rs.getString("id"), rs.getString("name"),
                     rs.getString("info"), Integer.parseInt(rs.getString("cnt_likes")),
-                    rs.getString("gender"), rs.getString("purpose"), rs.getString("location"));
+                    rs.getString("gender"), rs.getString("purpose"), rs.getString("location"),
+                    rs.getString("photo"));
         }
         return t;
     }
@@ -35,7 +36,8 @@ public class TrainingDAO {
         while (rs.next()) {
             trs.add(new Training(rs.getString("id"), rs.getString("name"),
                     rs.getString("info"), Integer.parseInt(rs.getString("cnt_likes")),
-                    rs.getString("gender"), rs.getString("purpose"), rs.getString("location")));
+                    rs.getString("gender"), rs.getString("purpose"), rs.getString("location"),
+                    rs.getString("photo")));
         }
         return trs;
     }
@@ -50,7 +52,8 @@ public class TrainingDAO {
         while (rs.next()) {
             trs.add(new Training(rs.getString("id"), rs.getString("name"),
                     rs.getString("info"), Integer.parseInt(rs.getString("cnt_likes")),
-                    rs.getString("gender"), rs.getString("purpose"), rs.getString("location")));
+                    rs.getString("gender"), rs.getString("purpose"), rs.getString("location"),
+                    rs.getString("photo")));
         }
         return trs;
     }

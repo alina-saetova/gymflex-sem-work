@@ -83,7 +83,7 @@
                     <c:if test="${flag.equals('false')}">
                         <button class='like-toggle basic' onclick="like(${training.getId()})"> ♥ </button>
                     </c:if>
-                    <span class='hidden'>${training.getCnt_likes()} likes</span>
+                    <span>${training.getCnt_likes()} likes</span>
                 </div>
             </div>
             <c:forEach var="ex" items="${exercises}">
@@ -97,7 +97,7 @@
                 <div class="card-body">
 <%--                    пофиксить отображение названия тренировки--%>
                     <div class="col-sm-10"><h1 class="my-4" style="text-align: center">${training.getName()} </h1></div>
-                    <p class="card-text">${training.getInfo()}</p>
+                    <p class="card-text"><img src="${training.getPhoto()}" width="675" alt="...">${training.getInfo()}</p>
                 </div>
             </div>
         </div>

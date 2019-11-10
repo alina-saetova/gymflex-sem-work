@@ -20,9 +20,6 @@ public class SavedTrainingDAO {
                 "where training_id = ? AND user_id = ?");
         ps.setInt(1, Integer.parseInt(training_id));
         ps.setInt(2, Integer.parseInt(user_id));
-        if (ud.getUserById(user_id) == null) {
-            return "true";
-        }
         ResultSet rs = ps.executeQuery();
         if (rs.next()) {
             return "true";

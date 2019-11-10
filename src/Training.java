@@ -1,12 +1,21 @@
 public class Training {
 
-    String id;
-    String name;
-    String info;
-    int cnt_likes;
-    String gender;
-    String purpose;
-    String location;
+    private String id;
+    private String name;
+    private String info;
+    private int cnt_likes;
+    private String gender;
+    private String purpose;
+    private String location;
+    private String photo;
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
 
     public String getId() {
         return id;
@@ -79,7 +88,7 @@ public class Training {
 
 
 
-    public Training(String id, String name, String info, int cnt_likes, String gender, String purpose, String location) {
+    public Training(String id, String name, String info, int cnt_likes, String gender, String purpose, String location, String photo) {
         this.id = id;
         this.name = name;
         this.info = info;
@@ -87,6 +96,7 @@ public class Training {
         this.gender = gender;
         this.purpose = purpose;
         this.location = location;
+        this.photo = photo;
     }
 
 }

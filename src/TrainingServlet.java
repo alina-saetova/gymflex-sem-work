@@ -49,7 +49,7 @@ public class TrainingServlet extends HttpServlet {
             e.printStackTrace();
         }
         User user = (User) req.getSession().getAttribute("current_user");
-        String flag = "";
+        String flag = "true";
         if (user != null) {
             try {
                 flag = std.checkLike(user.getId(), id);

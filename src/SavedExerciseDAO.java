@@ -22,10 +22,11 @@ public class SavedExerciseDAO {
                 "where exercise_id = ? AND user_id = ?");
         ps.setInt(1, Integer.parseInt(exercise_id));
         ps.setInt(2, Integer.parseInt(user_id));
-        ResultSet rs = ps.executeQuery();
         if (ud.getUserById(user_id) == null) {
-            return "no_auth";
+            System.out.println("true");
+            return "true";
         }
+        ResultSet rs = ps.executeQuery();
         if (rs.next()) {
             return "true";
         }

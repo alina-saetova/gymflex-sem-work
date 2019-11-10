@@ -65,6 +65,7 @@ public class ExerciseDAO {
 
     public void updateLikes(String exercise_id) throws SQLException {
         int likes = getExerciseById(exercise_id).getCnt_likes() + 1;
+        System.out.println(likes);
         PreparedStatement ps = connection.prepareStatement("update exercises set likes = ?  where id = ?");
         ps.setInt(1, likes);
         ps.setInt(2, Integer.parseInt(exercise_id));

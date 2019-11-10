@@ -43,19 +43,15 @@ public class ExerciseServlet extends HttpServlet {
             ex.printStackTrace();
         }
         User user = (User) req.getSession().getAttribute("current_user");
-        String user_id = null;
-        String flag = "";
+        String flag = "true";
         if (user != null) {
-            user_id = user.getId();
             try {
-                flag = sed.checkLike(user_id, id);
+                flag = sed.checkLike(user.getId(), id);
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
         }
-        else {
-            flag = "no_auth";
-        }
+        req.setAttribute("user", user);
         req.setAttribute("flag", flag);
         req.setAttribute("comms", comms);
         req.setAttribute("exercise", e);

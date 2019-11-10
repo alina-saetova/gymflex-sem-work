@@ -21,6 +21,7 @@ public class LikeArticleServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String type = req.getParameter("type");
         User user = (User) req.getSession().getAttribute("current_user");
+        resp.setContentType("text/html");
         if (type.equals("exercise")) {
             String exercise_id = req.getParameter("exercise_id");
             try {
@@ -30,6 +31,11 @@ public class LikeArticleServlet extends HttpServlet {
             }
             try {
                 ed.updateLikes(exercise_id);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            try {
+                resp.getWriter().println(ed.getExerciseById(exercise_id).getCnt_likes());
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -46,7 +52,11 @@ public class LikeArticleServlet extends HttpServlet {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+            try {
+                resp.getWriter().println(ed.getExerciseById(training_id).getCnt_likes());
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-
     }
 }
