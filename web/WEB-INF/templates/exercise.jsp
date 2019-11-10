@@ -71,31 +71,6 @@
 </head>
 <body class="body-with-img">
 <%@include file= "includes/nav.jsp"%>
-<%--    <p><c:out value="${exercise.getName()}"/></p>--%>
-<%--    <div id="resptext">--%>
-<%--        <c:forEach var="com" items="${comms}">--%>
-<%--            <p>${com.getContent()}</p>--%>
-<%--        </c:forEach>--%>
-<%--    </div>--%>
-<%--    <form method="post">--%>
-<%--        <p><b>Введите ваш отзыв:</b></p>--%>
-<%--        <p><textarea rows="10" cols="45" name="text" id="comment"></textarea></p>--%>
-<%--        <p><input type="button" value="Отправить" onclick="send_comment(${exercise.getId()})"></p>--%>
-<%--    </form>--%>
-<%--&lt;%&ndash;    проверяет наличие лайка&ndash;%&gt;--%>
-<%--    <div id="like_button">--%>
-<%--        <c:if test="${flag.equals('true')}">--%>
-<%--            <p>сохранено</p>--%>
-<%--        </c:if>--%>
-<%--        <c:if test="${flag.equals('false')}">--%>
-<%--            <form method="post">--%>
-<%--                <input type="button" value="типа лайк" onclick="like(${exercise.getId()})">--%>
-<%--            </form>--%>
-<%--        </c:if>--%>
-<%--        <c:if test="${flag.equals('no_auth')}">--%>
-<%--            <p>юзер не авторизован</p>--%>
-<%--        </c:if>--%>
-<%--    </div>--%>
 <div class="container bootstrap snippet">
     <div class="row">
         <div class="col-sm-10"><h1 class="my-4">${exercise.getName()}</h1></div>
