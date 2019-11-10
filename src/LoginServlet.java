@@ -22,32 +22,22 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("current_user");
         response.setContentType("text/xml");
-        if (user != null) {
-            response.sendRedirect("/profile");
-        } else {
-            try {
-                if (us.validatingUser(request.getParameter("login"), request.getParameter("password"))) {
-                    session.setAttribute("current_user", ud.getUserByLogin(request.getParameter("login")));
-                    response.getWriter().println(1);
-                } else {
-                    response.getWriter().println(0);
-                }
-            } catch (SQLException | NoSuchAlgorithmException e) {
-                e.printStackTrace();
+        try {
+            if (us.validatingUser(request.getParameter("login"), request.getParameter("password"))) {
+                session.setAttribute("current_user", ud.getUserByLogin(request.getParameter("login")));
+                response.getWriter().println(1);
+            } else {
+                response.getWriter().println(0);
             }
+        } catch (SQLException | NoSuchAlgorithmException e) {
+            e.printStackTrace();
         }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        User user = (User) request.getSession().getAttribute("current_user");
-        if (user != null) {
-            response.sendRedirect("/profile");
-        }
-        else {
-            response.setContentType("text/html");
-            RequestDispatcher rd = request.getRequestDispatcher("/login_page");
-            rd.forward(request, response);
-        }
+        response.setContentType("text/html");
+        RequestDispatcher rd = request.getRequestDispatcher("/login_page");
+        rd.forward(request, response);
     }
 
 }

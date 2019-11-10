@@ -28,6 +28,7 @@
                 },
                 success: function (msg) {
                     $('#cnt_likes').html("" + msg.toString() + " likes");
+
                 }
             });
             alert('тренировка сохранена')

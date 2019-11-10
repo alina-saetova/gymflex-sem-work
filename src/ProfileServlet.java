@@ -23,61 +23,55 @@ public class ProfileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = (User) request.getSession().getAttribute("current_user");
-        if (user == null) {
-            response.sendRedirect("/login");
+        List<Integer> tr_ids = new ArrayList<>();
+        try {
+            tr_ids = std.getSavedTrainingsId(user);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        else {
-            List<Integer> tr_ids = new ArrayList<>();
+        List<Training> saved_trainings = new ArrayList<>();
+        for (int id : tr_ids) {
             try {
-                tr_ids = std.getSavedTrainingsId(user);
+                saved_trainings.add(td.getTrainingById(id));
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            List<Training> saved_trainings = new ArrayList<>();
-            for (int id : tr_ids) {
-                try {
-                    saved_trainings.add(td.getTrainingById(id));
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            List<Integer> ex_ids = new ArrayList<>();
-            try {
-                ex_ids = sed.getSavedExercisesId(user);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            List<Exercise> saved_exercises = new ArrayList<>();
-            for (int id : ex_ids) {
-                try {
-                    saved_exercises.add(ed.getExerciseById(id));
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            Map<UserTraining, List<UserExercise>> map = new HashMap<>();
-            List<UserTraining> ut = new ArrayList<>();
-            try {
-                ut = utd.getUserTrainings(user.getId());
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            for (UserTraining u : ut) {
-                try {
-                    map.put(u, ued.getExercisesFromUserTraining(u.getId()));
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            request.setAttribute("map", map);
-            request.setAttribute("saved_exercises", saved_exercises);
-            request.setAttribute("saved_trainings", saved_trainings);
-            request.setAttribute("user", user);
-            response.setContentType("text/html");
-            RequestDispatcher rd = request.getRequestDispatcher("/profile_page");
-            rd.forward(request, response);
         }
-
+        List<Integer> ex_ids = new ArrayList<>();
+        try {
+            ex_ids = sed.getSavedExercisesId(user);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        List<Exercise> saved_exercises = new ArrayList<>();
+        for (int id : ex_ids) {
+            try {
+                saved_exercises.add(ed.getExerciseById(id));
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        Map<UserTraining, List<UserExercise>> map = new HashMap<>();
+        List<UserTraining> ut = new ArrayList<>();
+        try {
+            ut = utd.getUserTrainings(user.getId());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        for (UserTraining u : ut) {
+            try {
+                map.put(u, ued.getExercisesFromUserTraining(u.getId()));
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        request.setAttribute("map", map);
+        request.setAttribute("saved_exercises", saved_exercises);
+        request.setAttribute("saved_trainings", saved_trainings);
+        request.setAttribute("user", user);
+        response.setContentType("text/html");
+        RequestDispatcher rd = request.getRequestDispatcher("/profile_page");
+        rd.forward(request, response);
     }
 
     @Override
