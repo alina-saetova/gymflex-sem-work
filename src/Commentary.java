@@ -1,5 +1,6 @@
 import java.sql.SQLException;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Commentary {
@@ -10,7 +11,12 @@ public class Commentary {
     private String type;
     private Date date;
     private String content;
+    private String dateString;
     private UserDAO ud = new UserDAO();
+
+    public String getDateString() {
+        return dateString;
+    }
 
     public String getType() {
         return type;
@@ -79,6 +85,8 @@ public class Commentary {
         this.date = date;
         this.content = content;
         this.type = type;
+        SimpleDateFormat f = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+        dateString = f.format(date);
     }
 
 }

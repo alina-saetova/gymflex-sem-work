@@ -56,7 +56,7 @@
                             "                            <div class=\"panel-heading\">\n" +
                             "                                <div class=\"author\">" + msg.objects[0].user.firstName + " " + msg.objects[0].user.lastName + "</div>\n" +
                             "                                <div class=\"metadata\">\n" +
-                            "                                    <span class=\"date\">" + msg.objects[0].date.toString() + "</span>\n" +
+                            "                                    <span class=\"date\">" + msg.objects[0].dateString + "</span>\n" +
                             "                                </div>\n" +
                             "                            </div>\n" +
                             "                            <div class=\"panel-body\">\n" +
@@ -124,7 +124,7 @@
                             <div class="panel-heading">
                                 <div class="author">${com.getUser().getFirstName()} ${com.getUser().getLastName()}</div>
                                 <div class="metadata">
-                                    <span class="date">${com.getDate()}</span>
+                                    <span class="date">${com.getDateString()}</span>
                                 </div>
                             </div>
                             <div class="panel-body">
@@ -149,6 +149,9 @@
                         }
                     </script>
                     <input type="button" class="btn" value="Прокомментировать" onclick="send_comment(${training.getId()})">
+<%--                    <jsp:include page="btn_send_comment.jsp" >--%>
+<%--                        <jsp:param name="type" value="${training.getId()}"/>--%>
+<%--                    </jsp:include>--%>
                 </form>
             </div>
         </c:if>

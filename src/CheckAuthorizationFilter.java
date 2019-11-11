@@ -15,12 +15,15 @@ public class CheckAuthorizationFilter implements Filter {
         HttpServletResponse resp = (HttpServletResponse) servletResponse;
         User user = (User) req.getSession().getAttribute("current_user");
         Cookie[] cookies = req.getCookies();
-        for (Cookie c : cookies) {
-            if (c.getName().equals("user_login") && user == null) {
-                try {
-                    req.getSession().setAttribute("current_user", ud.getUserByLogin(c.getValue()));
-                } catch (SQLException e) {
-                    e.printStackTrace();
+        if (user == null) {
+            for (Cookie c : cookies) {
+                if (c.getName().equals("user_login")) {
+                    try {
+                        user = ud.getUserByLogin(c.getValue());
+                        req.getSession().setAttribute("current_user", user);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }

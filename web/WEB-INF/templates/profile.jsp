@@ -15,6 +15,7 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../../css/styles.css" type="text/css">
     <title>Профиль</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
     <script type="text/javascript">
         function save() {
             var fname = document.getElementById("firstname").value;
@@ -85,7 +86,7 @@
     <div class="row">
         <div class="col-lg-3 col-sm-6 mb-4">
             <div class="list-group ">
-                <form action="" method="post">
+                <form method="post" enctype="multipart/form-data">
                     <div class="list-group-item tr">
                         <img id="profile-img" src="${user.getPhoto()}" alt="img" class="rounded-circle" width="180"
                              height="180">
@@ -107,9 +108,6 @@
                     </div>
                     <div class="list-group-item tr">
                         <input class="input-tr" type="text" id="login" value="${user.getLogin()}"/>
-                    </div>
-                    <div class="list-group-item tr">
-                        <input type="file" id="filebutton" name="photo" class="input-file">
                     </div>
                     <div class="list-group-item tr">
                         <input type="button" value="Изменить данные" class="btn" onclick="save()">

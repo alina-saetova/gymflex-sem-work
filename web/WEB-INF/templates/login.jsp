@@ -21,6 +21,11 @@
         function check() {
             var login = document.getElementById("loginField").value;
             var password = document.getElementById("passwordField").value;
+            var remember = document.getElementById("rem");
+            var check = null;
+            if (remember.checked == true) {
+                check = remember.value;
+            }
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -35,7 +40,7 @@
             xmlhttp.open("POST", "/login", true);
             xmlhttp.setRequestHeader("Content-Type",
                 "application/x-www-form-urlencoded");
-            xmlhttp.send("login=" + login + "&password=" + password);
+            xmlhttp.send("login=" + login + "&password=" + password + "&remember=" + check);
         }
     </script>
 </head>
@@ -63,7 +68,7 @@
                                name="password">
                     </div>
                     <div class="row align-items-center remember">
-                        <input type="checkbox">Запомнить меня
+                        <input type="checkbox" name="remember" id="rem" value="check">Запомнить меня
                     </div>
                     <hr>
                     <div>

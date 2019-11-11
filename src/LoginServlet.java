@@ -16,13 +16,16 @@ public class LoginServlet extends HttpServlet {
         User user = (User) session.getAttribute("current_user");
         String login = request.getParameter("login");
         response.setContentType("text/xml");
+        if (request.getParameter("remember").equals("check")) {
+            Cookie c = new Cookie("user_login", login);
+            c.setMaxAge(60 * 60 * 24 * 14);
+            response.addCookie(c);
+        }
         try {
             if (us.validatingUser(login, request.getParameter("password"))) {
                 session.setAttribute("current_user", ud.getUserByLogin(login));
-                Cookie c = new Cookie("user_login", login);
-                c.setMaxAge(60 * 60 * 24 * 14);
-                response.addCookie(c);
                 response.getWriter().println(1);
+
             } else {
                 response.getWriter().println(0);
             }

@@ -7,22 +7,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67f3aaba-9a52-41ab-9818-75f28891296f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/templates/btn_send_comment.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/CheckAuthorizationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/CheckAuthorizationFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/Commentary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/Commentary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/DeleteArticleServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/DeleteArticleServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/LogoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/LogoutServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/ProfileServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/ProfileServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/RegistrationServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/RegistrationServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/SavedArticlesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/SavedArticlesService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/calculator.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/calculator.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/exercise.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/exercise.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/profile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/registration.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/registration.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/training.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/training.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/web-sport/CheckAuthorizationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/CheckAuthorizationFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web-sport/Commentary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/Commentary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web-sport/DeleteArticleServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/DeleteArticleServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/web-sport/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web-sport/LogoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/LogoutServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web-sport/ProfileServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/ProfileServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/web-sport/RegistrationServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/RegistrationServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web-sport/SavedArticlesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/SavedArticlesService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CheckAuthorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CheckAuthorizationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commentary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commentary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DeleteArticleServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DeleteArticleServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProfileServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegistrationServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SavedArticlesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SavedArticlesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/templates/calculator.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/templates/calculator.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/templates/exercise.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/templates/exercise.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/templates/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/templates/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/templates/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/templates/profile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/templates/training.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/templates/training.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,8 +127,8 @@
         <option value="CSS File" />
         <option value="HTML File" />
         <option value="JavaScript File" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -156,11 +174,11 @@
       <recent name="C:\Users\alina\Documents\GitHub\web-sport\web\img\trainings_photo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alina\Documents\GitHub\web-sport\web\WEB-INF\templates" />
+      <recent name="C:\Users\alina\Documents\GitHub\web-sport\web\WEB-INF\templates\includes" />
       <recent name="C:\Users\alina\Documents\GitHub\web-sport\web\img" />
       <recent name="C:\Users\alina\Documents\GitHub\web-sport\web" />
       <recent name="C:\Users\alina\Documents\GitHub\web-sport\web\WEB-INF" />
-      <recent name="C:\Users\alina\Documents\GitHub\web-sport\web\WEB-INF\templates\includes" />
-      <recent name="C:\Users\alina\Documents\GitHub\web-sport\web\WEB-INF\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -269,7 +287,12 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@908ee159" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f2484747" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f2484747" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@38a3a990" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -312,7 +335,9 @@
       <workItem from="1573365991480" duration="19357000" />
       <workItem from="1573402210346" duration="51000" />
       <workItem from="1573415663312" duration="4454000" />
-      <workItem from="1573446475800" duration="5036000" />
+      <workItem from="1573446475800" duration="11519000" />
+      <workItem from="1573476714925" duration="11562000" />
+      <workItem from="1573488637832" duration="3879000" />
     </task>
     <servers />
   </component>

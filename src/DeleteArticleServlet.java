@@ -18,18 +18,18 @@ public class DeleteArticleServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
         String type = req.getParameter("type");
         User user = (User) req.getSession().getAttribute("current_user");
         int id =  Integer.parseInt(req.getParameter("id"));
-        if (type.equals("exercise")) {
+        if (type.equals("exercise") || type.equals("training")) {
             try {
                 sas.deleteArticle(id, user.getId(), type);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-        else if (type.equals("own_training")) {
+        else {
             try {
                 utd.deleteUserTraining(id);
             } catch (SQLException e) {
@@ -37,13 +37,6 @@ public class DeleteArticleServlet extends HttpServlet {
             }
             try {
                 ued.deleteUserExercisesFromTraining(id);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        else {
-            try {
-                sas.deleteArticle(id, user.getId(), type);
             } catch (SQLException e) {
                 e.printStackTrace();
             }

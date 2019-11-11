@@ -4,10 +4,8 @@ import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.*;
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 
 @MultipartConfig
