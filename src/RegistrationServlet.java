@@ -1,10 +1,7 @@
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
+import javax.servlet.http.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -24,13 +21,16 @@ public class RegistrationServlet extends HttpServlet {
         String name = request.getParameter("name");
         resp.setContentType("text/html");
         request.setAttribute("name", name);
-        RequestDispatcher rd = request.getRequestDispatcher("/registration_page"); //jsp файл как отдельный сервлет
+        RequestDispatcher rd = request.getRequestDispatcher("/registration_page");
         rd.forward(request, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String login = req.getParameter("login");
+        Cookie c = new Cookie("user_login", login);
+        c.setMaxAge(60 * 60 * 24 * 14);
+        resp.addCookie(c);
         String firstName = req.getParameter("first_name");
         String lastName = req.getParameter("last_name");
         String password = null;

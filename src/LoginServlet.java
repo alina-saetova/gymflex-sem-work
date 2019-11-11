@@ -1,17 +1,10 @@
-import freemarker.template.Configuration;
-import freemarker.template.TemplateExceptionHandler;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class LoginServlet extends HttpServlet {
 
@@ -21,10 +14,14 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("current_user");
+        String login = request.getParameter("login");
         response.setContentType("text/xml");
         try {
-            if (us.validatingUser(request.getParameter("login"), request.getParameter("password"))) {
-                session.setAttribute("current_user", ud.getUserByLogin(request.getParameter("login")));
+            if (us.validatingUser(login, request.getParameter("password"))) {
+                session.setAttribute("current_user", ud.getUserByLogin(login));
+                Cookie c = new Cookie("user_login", login);
+                c.setMaxAge(60 * 60 * 24 * 14);
+                response.addCookie(c);
                 response.getWriter().println(1);
             } else {
                 response.getWriter().println(0);

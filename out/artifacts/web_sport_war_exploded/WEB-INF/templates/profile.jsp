@@ -109,6 +109,9 @@
                         <input class="input-tr" type="text" id="login" value="${user.getLogin()}"/>
                     </div>
                     <div class="list-group-item tr">
+                        <input type="file" id="filebutton" name="photo" class="input-file">
+                    </div>
+                    <div class="list-group-item tr">
                         <input type="button" value="Изменить данные" class="btn" onclick="save()">
                     </div>
                 </form>
@@ -129,6 +132,11 @@
                     </div>
                     <div class="list-group-item tr">
                         <input type="button" value="Изменить пароль" class="btn" onclick="change_password()">
+                    </div>
+                </form>
+                <form action="/logout">
+                    <div class="list-group-item tr">
+                        <button class="btn">Выйти</button>
                     </div>
                 </form>
             </div>
