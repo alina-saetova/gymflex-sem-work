@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: alina
+  models.User: alina
   Date: 25/10/2019
   Time: 8:47 AM
   To change this template use File | Settings | File Templates.
@@ -15,8 +15,10 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../../css/styles.css" type="text/css">
     <title>Профиль</title>
+    <script src="../../js/profile.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
     <script type="text/javascript">
+        //если переместить в отдельный файл, у алертов слетает кодировка
         function save() {
             var fname = document.getElementById("firstname").value;
             var lname = document.getElementById("lastname").value;
@@ -31,6 +33,24 @@
             xmlhttp.setRequestHeader("Content-Type",
                 "application/x-www-form-urlencoded");
             xmlhttp.send("firstname=" + fname + "&lastname=" + lname + "&login=" + login);
+        }
+        function change_password() {
+            $.ajax({
+                type: "POST",
+                url: "/change_password",
+                data: {
+                    oldpassword: $("#old_password").val(),
+                    newpassword: $('#new_password').val()
+                },
+                success:function (msg) {
+                    if (msg == 1) {
+                        alert("успешно сохранено")
+                    }
+                    else {
+                        alert("введен неправильный старый пароль")
+                    }
+                }
+            })
         }
     </script>
 </head>
