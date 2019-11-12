@@ -32,49 +32,6 @@
                 "application/x-www-form-urlencoded");
             xmlhttp.send("firstname=" + fname + "&lastname=" + lname + "&login=" + login);
         }
-        function change_password() {
-            var oldp = document.getElementById("old_password").value;
-            var newp = document.getElementById("new_password").value;
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function () {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    if (xmlhttp.responseText == 1) {
-                        alert("успешно сохранено")
-                    }
-                    else {
-                        alert("введен неправильный старый пароль")
-                    }
-                }
-            };
-            xmlhttp.open("POST", "/change_password", true);
-            xmlhttp.setRequestHeader("Content-Type",
-                "application/x-www-form-urlencoded");
-            xmlhttp.send("oldpassword=" + oldp + "&newpassword=" + newp);
-        }
-        function delete_training(s_tr) {
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.open("POST", "/delete_article", true);
-            xmlhttp.setRequestHeader("Content-Type",
-                "application/x-www-form-urlencoded");
-            xmlhttp.send("type=training" + "&id=" + s_tr);
-        }
-        function delete_exercise(s_ex) {
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.open("POST", "/delete_article", true);
-            xmlhttp.setRequestHeader("Content-Type",
-                "application/x-www-form-urlencoded");
-            xmlhttp.send("type=exercise" + "&id=" + s_ex);
-        }
-        function delete_own_training(c_tr) {
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.open("POST", "/delete_article", true);
-            xmlhttp.setRequestHeader("Content-Type",
-                "application/x-www-form-urlencoded");
-            xmlhttp.send("type=own_training" + "&id=" + c_tr);
-        }
-        function remove(id) {
-            document.getElementById(id).remove();
-        }
     </script>
 </head>
 <body class="body-with-img">
@@ -147,7 +104,7 @@
                         <form method="post">
                             <div class="list-group-item tr d-flex justify-content-between" id="${s_tr.getId()}">
                                 <a href="/training?id=${s_tr.getId()}" class="list-group-item col-sm-10">${s_tr.getName()}</a>
-                                <input type="button" class="btn col-sm-1" value="x" onclick="delete_training(${s_tr.getId()}); remove(${s_tr.getId()})">
+                                <input type="button" class="btn col-sm-1" value="x" onclick="delete_from_db(${s_tr.getId()}, 'training'); remove(${s_tr.getId()})">
                              </div>
                         </form>
                     </c:forEach>
@@ -157,7 +114,7 @@
                     <c:forEach var="s_ex" items="${saved_exercises}">
                         <div class="list-group-item tr d-flex justify-content-between" id="${s_ex.getId()}">
                             <a href="/exercise?id=${s_ex.getId()}" class="list-group-item col-sm-10">${s_ex.getName()}</a>
-                            <input type="button" class="btn col-sm-1" value="x" onclick="delete_exercise(${s_ex.getId()}); remove(${s_ex.getId()})">
+                            <input type="button" class="btn col-sm-1" value="x" onclick="delete_from_db(${s_ex.getId()}, 'exercise'); remove(${s_ex.getId()})">
                         </div>
                     </c:forEach>
                 </c:if>
@@ -169,7 +126,7 @@
                             <div class="list-group-item tr flex-container" id="${c_tr.key.getId()}">
                                 <div class="d-flex justify-content-between">
                                     <h3>${c_tr.key.getName()}</h3>
-                                    <input type="button" class="btn col-sm-1" value="x" onclick="delete_own_training(${c_tr.key.getId()});remove(${c_tr.key.getId()})"/>
+                                    <input type="button" class="btn col-sm-1" value="x" onclick="delete_from_db(${c_tr.key.getId()}, 'own_training');remove(${c_tr.key.getId()})"/>
                                 </div>
                                 <hr>
                                 <div class="input-group form-group justify-content-around">

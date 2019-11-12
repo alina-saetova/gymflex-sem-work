@@ -20,18 +20,6 @@
 </head>
 <body class="body-with-img">
 <%@include file= "includes/nav.jsp"%>
-<%--    <p>${name}</p>--%>
-<%--    <form method="post">--%>
-<%--        <input type="hidden" name="ex_num" value="${ex_num}">--%>
-<%--        <input type="hidden" name="tr_id" value="${tr_id}">--%>
-<%--        <c:forEach var="i" begin="1" end="${ex_num}" step="1">--%>
-<%--            <input type="text" name="${i}name" placeholder="название упражнения">--%>
-<%--            <br>--%>
-<%--            <input type="text" name="${i}reps" placeholder="кол-во повторений">--%>
-<%--            <br>--%>
-<%--        </c:forEach>--%>
-<%--        <input type="submit" value="сохранить">--%>
-<%--    </form>--%>
 <div class="container type2">
     <div class="d-flex justify-content-center h-100">
         <div class="card form-card type3">

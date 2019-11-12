@@ -20,20 +20,6 @@
 </head>
 <body class="body-with-img">
 <%@include file= "includes/nav.jsp"%>
-<%--    <c:if test="${flag == false}">--%>
-<%--        <p>Войдите, чтобы получить возможность создать свою тренировку</p>--%>
-<%--        <form action="/login">--%>
-<%--            <button>Войти</button>--%>
-<%--        </form>--%>
-<%--    </c:if>--%>
-<%--    <c:if test="${flag == true}">--%>
-<%--        <form method="post">--%>
-<%--            <input type="text" name="training_name" placeholder="название тренировки">--%>
-<%--            <input type="number" name="exercises_number" placeholder="кол-во упражнений">--%>
-<%--            <input type="submit" value="Далее">--%>
-<%--        </form>--%>
-<%--    </c:if>--%>
-
 <div class="container type1">
     <div class="d-flex justify-content-center h-100">
         <c:if test="${flag == false}">

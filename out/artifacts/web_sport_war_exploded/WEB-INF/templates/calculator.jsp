@@ -13,36 +13,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../../css/styles.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
           integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <title>Расчет калорий</title>
-    <script type="text/javascript">
-        function calculate() {
-            var age = document.getElementById("age").value;
-            var sel = document.getElementById("gender-select");
-            var gender = sel.options[sel.selectedIndex].value;
-            var weight = document.getElementById("weight").value;
-            var height = document.getElementById("height").value;
-            var sel2 = document.getElementById("active-select");
-            var activity = sel2.options[sel2.selectedIndex].value;
-            var sel3 = document.getElementById("formula-select");
-            var formula = sel3.options[sel3.selectedIndex].value;
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function () {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    document.getElementById("answer").innerHTML = xmlhttp.responseText;
-                }
-            };
-            xmlhttp.open("POST", "/calculator", true);
-            xmlhttp.setRequestHeader("Content-Type",
-                "application/x-www-form-urlencoded");
-            xmlhttp.send("age=" + age + "&gender=" + gender + "&weight=" + weight +
-                        "&height=" + height + "&activity=" + activity + "&formula=" + formula);
-        }
-    </script>
+    <script src="../../js/calculator.js"></script>
 </head>
 <body class="body-with-img">
-<%--    <jsp:include page="includes/nav.jsp"/>--%>
     <%@include file= "includes/nav.jsp"%>
     <div class="container type2">
         <div class="d-flex justify-content-center h-100">

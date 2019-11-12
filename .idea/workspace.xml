@@ -7,36 +7,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67f3aaba-9a52-41ab-9818-75f28891296f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/templates/btn_send_comment.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/calculator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/exercise.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/profile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/training.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/CheckAuthorizationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/CheckAuthorizationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/Commentary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/Commentary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/DeleteArticleServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/DeleteArticleServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/html/ex_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/ex_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/html/exercises_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/exercises_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/html/train_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/train_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/html/tranings_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/tranings_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/ChangePasswordServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/ChangePasswordServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/ProfileServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/ProfileServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/RegistrationServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/RegistrationServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/SavedArticlesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/classes/SavedArticlesService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/js/consrtaint.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/js/like.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/btn_send_comment.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/calculator.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/calculator.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/create_training_exs.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/create_training_exs.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/create_training_title.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/create_training_title.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/exercise.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/exercise.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/profile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/registration.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/registration.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/training.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_sport_war_exploded/WEB-INF/templates/training.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web-sport/CheckAuthorizationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/CheckAuthorizationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web-sport/Commentary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/Commentary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web-sport/DeleteArticleServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/DeleteArticleServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web-sport/ChangePasswordServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/ChangePasswordServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/web-sport/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web-sport/ProfileServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/ProfileServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web-sport/RegistrationServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/RegistrationServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web-sport/SavedArticlesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-sport/SavedArticlesService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CheckAuthorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CheckAuthorizationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commentary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commentary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DeleteArticleServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DeleteArticleServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChangePasswordServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChangePasswordServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProfileServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegistrationServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SavedArticlesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SavedArticlesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/js/consrtaint.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/consrtaint.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/js/like.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/like.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/templates/btn_send_comment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/templates/includes/btn_send_comment.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/templates/calculator.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/templates/calculator.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/templates/create_training_exs.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/templates/create_training_exs.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/templates/create_training_title.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/templates/create_training_title.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/templates/exercise.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/templates/exercise.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/templates/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/templates/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/templates/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/templates/profile.jsp" afterDir="false" />
@@ -126,9 +127,9 @@
       <list>
         <option value="CSS File" />
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="Class" />
         <option value="Jsp File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -169,16 +170,16 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alina\Documents\GitHub\web-sport\web\WEB-INF\templates\includes" />
+      <recent name="C:\Users\alina\Documents\GitHub\web-sport\web" />
+      <recent name="C:\Users\alina\Documents\GitHub\web-sport\web\WEB-INF\templates" />
+      <recent name="C:\Users\alina\Documents\GitHub\web-sport\web\img" />
+      <recent name="C:\Users\alina\Documents\GitHub\web-sport\web\WEB-INF" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\alina\Documents\GitHub\web-sport\web\img\exercises_photo" />
       <recent name="C:\Users\alina\Documents\GitHub\web-sport\web\img\trainings_photo" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\alina\Documents\GitHub\web-sport\web\WEB-INF\templates" />
-      <recent name="C:\Users\alina\Documents\GitHub\web-sport\web\WEB-INF\templates\includes" />
-      <recent name="C:\Users\alina\Documents\GitHub\web-sport\web\img" />
-      <recent name="C:\Users\alina\Documents\GitHub\web-sport\web" />
-      <recent name="C:\Users\alina\Documents\GitHub\web-sport\web\WEB-INF" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -337,7 +338,10 @@
       <workItem from="1573415663312" duration="4454000" />
       <workItem from="1573446475800" duration="11519000" />
       <workItem from="1573476714925" duration="11562000" />
-      <workItem from="1573488637832" duration="3879000" />
+      <workItem from="1573488637832" duration="12264000" />
+      <workItem from="1573542770720" duration="1229000" />
+      <workItem from="1573561714165" duration="1638000" />
+      <workItem from="1573564515550" duration="4664000" />
     </task>
     <servers />
   </component>

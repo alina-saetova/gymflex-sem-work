@@ -31,7 +31,7 @@ public class ChangePasswordServlet extends HttpServlet {
             e.printStackTrace();
         }
         User user = (User) req.getSession().getAttribute("current_user");
-        resp.setContentType("text/xml");
+        resp.setContentType("text/html");
         if (user.getPassword().equals(oldpassword)) {
             try {
                 us.updatePassword(newpassword, user.getId());

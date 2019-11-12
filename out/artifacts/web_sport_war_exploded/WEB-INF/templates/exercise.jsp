@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../../css/styles.css">
-    <script src="../js/like.js"></script>
+    <script src="../../js/like.js"></script>
+    <script src="../../js/exercise.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
     <script type="text/javascript">
         function like(id) {
@@ -26,48 +27,13 @@
                     exercise_id : id
                 },
                 success: function (msg) {
-                    $('#cnt_likes').html("" + msg.toString() + " likes");
-                    alert('упражнение сохранено');
+                    $('#div_like').html("<button class='like-disable basic' disabled> ♥ </button>");
+                    $('#div_like').append("<span id=\"cnt_likes\">" + msg.toString() + "likes</span>");
                 }
             });
         }
-        function send_comment(ex_id) {
-            $.ajax({
-                type: "POST",
-                url: "/commentary",
-                data: {
-                    id : ex_id,
-                    type : "exercise",
-                    text : $("#textarea1").val()
-                },
-                dataType: "json",
-                success: function (msg) {
-                    if (msg.objects.length > 0) {
-                        $("#comments_cont").append("<li class=\"media\">\n" +
-                            "                    <div class=\"media-left\">\n" +
-                            "                        <a href=\"#\">\n" +
-                            "                            <img class=\"media-object rounded-circle\" src=\"" + msg.objects[0].user.photo + "\" alt=\"...\">\n" +
-                            "                        </a>\n" +
-                            "                    </div>\n" +
-                            "                    <div class=\"media-body\">\n" +
-                            "                        <div class=\"panel panel-info\">\n" +
-                            "                            <div class=\"panel-heading\">\n" +
-                            "                                <div class=\"author\">" + msg.objects[0].user.firstName + " " + msg.objects[0].user.lastName + "</div>\n" +
-                            "                                <div class=\"metadata\">\n" +
-                            "                                    <span class=\"date\">" + msg.objects[0].dateString + "</span>\n" +
-                            "                                </div>\n" +
-                            "                            </div>\n" +
-                            "                            <div class=\"panel-body\">\n" +
-                            "                                <div class=\"media-text text-justify\">" + msg.objects[0].content + "</div>\n" +
-                            "                            </div>\n" +
-                            "                        </div>\n" +
-                            "                    </div>\n" +
-                            "                </li>");
-                    }
-                }
-            })
-        }
     </script>
+    <title>Упражнение</title>
 </head>
 <body class="body-with-img">
 <%@include file= "includes/nav.jsp"%>
@@ -78,9 +44,9 @@
     <div class="row">
         <div class="col-lg-2 col-sm-6 mb-4">
             <div>
-                <div class='like'>
+                <div class='like' id="div_like">
                     <c:if test="${flag.equals('true')}">
-                        <button class='like-toggle basic' disabled onclick="like(${exercise.getId()})"> ♥ </button>
+                        <button class='like-disable basic' disabled> ♥ </button>
                     </c:if>
                     <c:if test="${flag.equals('false')}">
                         <button class='like-toggle basic' onclick="like(${exercise.getId()})"> ♥ </button>

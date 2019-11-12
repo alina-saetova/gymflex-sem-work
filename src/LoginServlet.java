@@ -15,7 +15,8 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("current_user");
         String login = request.getParameter("login");
-        response.setContentType("text/xml");
+        System.out.println(login + request.getParameter("password"));
+        response.setContentType("text/html");
         if (request.getParameter("remember").equals("check")) {
             Cookie c = new Cookie("user_login", login);
             c.setMaxAge(60 * 60 * 24 * 14);

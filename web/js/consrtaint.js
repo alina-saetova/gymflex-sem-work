@@ -1,6 +1,6 @@
 $(document).on('submit', '#log_on_form', function () {
-    let password = $(this).find('input[name="password"]').val();
-    let err_msg = '';
+    var password = $(this).find('input[name="password"]').val();
+    var err_msg = '';
 
     // проверка пароля на  корректность символов
     if (password.replace(/[A-z0-9!"?$%^&)(]/g, '')) {
