@@ -43,4 +43,16 @@ public class ExerciseService {
         ps.setInt(2, exercise_id);
         ps.execute();
     }
+
+    public List<Exercise> getLastAddedExercises() throws SQLException {
+        List<Exercise> exercises = new ArrayList<>();
+        PreparedStatement ps = connection.prepareStatement("SELECT * FROM exercises ORDER BY id DESC LIMIT 6");
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            exercises.add(new Exercise(rs.getInt("id"), rs.getString("name"),
+                    rs.getString("info"), rs.getInt("likes"),
+                    rs.getString("photo"), rs.getString("type")));
+        }
+        return exercises;
+    }
 }

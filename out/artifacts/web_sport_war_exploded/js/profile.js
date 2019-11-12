@@ -12,4 +12,3 @@ function delete_from_db(obj_id, obj_type) {
         }
     })
 }
-

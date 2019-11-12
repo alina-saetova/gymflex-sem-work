@@ -140,6 +140,24 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>main</servlet-name>
+        <servlet-class>servlets.MainPageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>main</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>main_page</servlet-name>
+        <jsp-file>/WEB-INF/templates/main_page.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>main_page</servlet-name>
+        <url-pattern>/main_page</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>calculator</servlet-name>
         <servlet-class>servlets.CalculatorServlet</servlet-class>
     </servlet>
