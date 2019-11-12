@@ -43,6 +43,10 @@ body {
     /*color: white;*/
 }
 
+main{
+    min-height: 80%;
+}
+
 h3, h4, h5, h6 {
     color: white;
 }
@@ -131,6 +135,7 @@ h1 {
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
+    min-height: 100%;
 }
 
 .container.type2 {
