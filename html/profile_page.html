@@ -58,7 +58,7 @@
                         <input class="input-tr" type="text" value="alinatopgirl"/>
                     </div>
                     <div class="list-group-item tr">
-                        <input type="submit" value="Изменить данные" class="btn">
+                        <input type="submit" value="Изменить данные" class="btn btn-sm">
                     </div>
                 </form>
             </div>
@@ -77,93 +77,116 @@
                         <input class="input-tr" type="text" value=""/>
                     </div>
                     <div class="list-group-item tr">
-                        <input type="submit" value="Изменить пароль" class="btn">
+                        <input type="submit" value="Изменить пароль" class="btn  btn-sm">
                     </div>
                 </form>
             </div>
         </div>
-        <div class="col-lg-9 col-sm-12">
-            <div class="list-group">
-                <h3 class="my-2"><strong>Сохраненное</strong></h3>
-                <form method="post">
-                    <div class="list-group-item tr d-flex justify-content-between">
-                        <a href="#" class="list-group-item col-sm-10">Тренировка</a>
-                        <input type="submit" class="btn col-sm-1" value="x"/>
-                    </div>
-                </form>
-                <form method="post">
-                    <div class="list-group-item tr d-flex justify-content-between">
-                        <a href="#" class="list-group-item col-sm-10">Тренировка</a>
-                        <input type="submit" class="btn col-sm-1" value="x"/>
-                    </div>
-                </form>
-                <form method="post">
-                    <div class="list-group-item tr d-flex justify-content-between">
-                        <a href="#" class="list-group-item col-sm-10">Тренировка</a>
-                        <input type="submit" class="btn col-sm-1" value="x"/>
-                    </div>
-                </form>
-                <hr>
-                <h3 class="my-2"><strong>Мои тренировки</strong></h3>
-                <form method="post">
-                    <div class="list-group-item tr flex-container">
-                        <div class="d-flex justify-content-between">
-                            <h3>Моя супер тренировка</h3>
-                            <input type="submit" class="btn col-sm-1" value="x"/>
-                        </div>
+<!--        Если нет сохраненного-->
+<!--        <div class="col-lg-9 col-sm-12">-->
+<!--            <div class="list-group">-->
+<!--                <h3 class="my-2"><strong>Сохраненные тренировки</strong></h3>-->
+<!--                <div class="list-group-item tr d-flex justify-content-between">-->
+<!--                    <h5><strong>Добавьте тренировку</strong></h5>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <hr>-->
+<!--            <div class="list-group">-->
+<!--                <h3 class="my-2"><strong>Сохраненные упражнения</strong></h3>-->
+<!--                <div class="list-group-item tr d-flex justify-content-between">-->
+<!--                    <h5><strong>Добавьте упражнения</strong></h5>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <hr>-->
+<!--            <div class="list-group">-->
+<!--                <h3 class="my-2"><strong>Мои тренировки</strong></h3>-->
+<!--                <div class="list-group-item tr d-flex justify-content-between">-->
+<!--                    <h5><strong>Создайте свою тренировку</strong></h5>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+                <div class="col-lg-9 col-sm-12">
+                    <div class="list-group">
+                        <h3 class="my-2"><strong>Сохраненное</strong></h3>
+                        <form method="post">
+                            <div class="list-group-item tr d-flex justify-content-between">
+                                <a href="#" class="list-group-item col-sm-10">Тренировка</a>
+                                <input type="submit" class="btn col-sm-1" value="x"/>
+                            </div>
+                        </form>
+                        <form method="post">
+                            <div class="list-group-item tr d-flex justify-content-between">
+                                <a href="#" class="list-group-item col-sm-10">Тренировка</a>
+                                <input type="submit" class="btn col-sm-1" value="x"/>
+                            </div>
+                        </form>
+                        <form method="post">
+                            <div class="list-group-item tr d-flex justify-content-between">
+                                <a href="#" class="list-group-item col-sm-10">Тренировка</a>
+                                <input type="submit" class="btn col-sm-1" value="x"/>
+                            </div>
+                        </form>
                         <hr>
-                        <div class="input-group form-group justify-content-around">
-                            <h6 class="col-sm-7">Упражнение</h6>
-                            <h6>Повторения/подходы</h6>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <a href="#" class="list-group-item col-sm-7">Упражнение</a>
-                            <a href="#" class="list-group-item col-sm-4">10 x 3</a>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <a href="#" class="list-group-item col-sm-7">Упражнение</a>
-                            <a href="#" class="list-group-item col-sm-4">10 x 3</a>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <a href="#" class="list-group-item col-sm-7">Упражнение</a>
-                            <a href="#" class="list-group-item col-sm-4">10 x 3</a>
-                        </div>
+                        <h3 class="my-2"><strong>Мои тренировки</strong></h3>
+                        <form method="post">
+                            <div class="list-group-item tr flex-container">
+                                <div class="d-flex justify-content-between">
+                                    <h3>Моя супер тренировка</h3>
+                                    <input type="submit" class="btn col-sm-1" value="x"/>
+                                </div>
+                                <hr>
+                                <div class="input-group form-group justify-content-around">
+                                    <h6 class="col-sm-7">Упражнение</h6>
+                                    <h6>Повторения/подходы</h6>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="list-group-item col-sm-7">Упражнение</a>
+                                    <a href="#" class="list-group-item col-sm-4">10 x 3</a>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="list-group-item col-sm-7">Упражнение</a>
+                                    <a href="#" class="list-group-item col-sm-4">10 x 3</a>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="list-group-item col-sm-7">Упражнение</a>
+                                    <a href="#" class="list-group-item col-sm-4">10 x 3</a>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="list-group-item tr flex-container">
+                                <div class="d-flex justify-content-between">
+                                    <h4>Еще одна супер тренировка</h4>
+                                    <input type="submit" class="btn col-sm-1" value="x"/>
+                                </div>
+                                <hr>
+                                <div class="input-group form-group justify-content-around">
+                                    <h6 class="col-sm-7">Упражнение</h6>
+                                    <h6>Повторения/подходы</h6>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="list-group-item col-sm-7">Упражнение</a>
+                                    <a href="#" class="list-group-item col-sm-4">10 x 3</a>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="list-group-item col-sm-7">Упражнение</a>
+                                    <a href="#" class="list-group-item col-sm-4">10 x 3</a>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="list-group-item col-sm-7">Упражнение</a>
+                                    <a href="#" class="list-group-item col-sm-4">10 x 3</a>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="list-group-item col-sm-7">Упражнение</a>
+                                    <a href="#" class="list-group-item col-sm-4">10 x 3</a>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="list-group-item col-sm-7">Упражнение</a>
+                                    <a href="#" class="list-group-item col-sm-4">10 x 3</a>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <hr>
-                    <div class="list-group-item tr flex-container">
-                        <div class="d-flex justify-content-between">
-                            <h4>Еще одна супер тренировка</h4>
-                            <input type="submit" class="btn col-sm-1" value="x"/>
-                        </div>
-                        <hr>
-                        <div class="input-group form-group justify-content-around">
-                            <h6 class="col-sm-7">Упражнение</h6>
-                            <h6>Повторения/подходы</h6>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <a href="#" class="list-group-item col-sm-7">Упражнение</a>
-                            <a href="#" class="list-group-item col-sm-4">10 x 3</a>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <a href="#" class="list-group-item col-sm-7">Упражнение</a>
-                            <a href="#" class="list-group-item col-sm-4">10 x 3</a>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <a href="#" class="list-group-item col-sm-7">Упражнение</a>
-                            <a href="#" class="list-group-item col-sm-4">10 x 3</a>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <a href="#" class="list-group-item col-sm-7">Упражнение</a>
-                            <a href="#" class="list-group-item col-sm-4">10 x 3</a>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <a href="#" class="list-group-item col-sm-7">Упражнение</a>
-                            <a href="#" class="list-group-item col-sm-4">10 x 3</a>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
+                </div>
     </div>
 </div>
 <footer>

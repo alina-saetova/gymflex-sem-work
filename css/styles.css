@@ -46,6 +46,9 @@ body {
 h3, h4, h5, h6 {
     color: white;
 }
+h1 {
+    color: #FF6A2A;
+}
 
 .carousel-item {
     height: 95vh;
@@ -232,7 +235,7 @@ h3, h4, h5, h6 {
     border: none;
     width: 30px;
     height: 30px;
-    font-size: 1.3em;
+    font-size: 1.0em;
     border-radius: 100px;
     background: #FF6A2A;
     color: white;
@@ -277,6 +280,10 @@ h3, h4, h5, h6 {
 #err {
     font-style: unset;
     text-align: center;
+}
+
+.a_reg {
+    color: white;
 }
 
 
