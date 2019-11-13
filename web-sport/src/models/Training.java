@@ -88,11 +88,10 @@ public class Training {
                 '}';
     }
 
-
-
     public Training(int id, String name, String info, int cnt_likes, String gender, String purpose, String location, String photo) {
         this.id = id;
         this.name = name;
+//        formatInfo(info);
         this.info = info;
         this.cnt_likes = cnt_likes;
         this.gender = gender;
@@ -100,5 +99,18 @@ public class Training {
         this.location = location;
         this.photo = photo;
     }
+
+//    public void formatInfo(String input) {
+//        String f = "";
+//        int cur = 0;
+//        for (int i = 0; i < input.length(); i++) {
+//            if (input.charAt(i) == '$') {
+//                f += input.substring(cur, i) + "\n";
+//                cur = i + 1;
+//            }
+//        }
+//        info = f;
+//        System.out.println(info);
+//    }
 
 }
