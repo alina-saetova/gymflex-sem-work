@@ -52,6 +52,7 @@
     </script>
 </head>
 <body class="body body-with-img">
+<main>
 <%@include file= "includes/nav.jsp"%>
 <div class="container bootstrap snippet">
     <div class="row">
@@ -113,6 +114,7 @@
         </div>
     </div>
 </div>
+</main>
 <%@include file= "includes/footer.jsp"%>
 </body>
 </html>

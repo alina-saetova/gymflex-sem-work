@@ -39,11 +39,11 @@
 <%@include file= "includes/nav.jsp"%>
 <div class="container bootstrap snippet">
     <div class="row">
-        <div class="col-sm-10"><h1 class="my-4">${exercise.getName()}</h1></div>
+        <div class="col-sm-10"><h1 class="my-4"><strong>${exercise.getName()}</strong></h1></div>
     </div>
     <div class="row">
-        <div class="col-lg-2 col-sm-6 mb-4">
-            <div>
+        <div class="col-lg-3 col-sm-6 mb-4">
+            <div class="list-group-item tr">
                 <div class='like' id="div_like">
                     <c:if test="${flag.equals('true')}">
                         <button class='like-disable basic' disabled> ♥ </button>
@@ -55,10 +55,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-10 col-sm-12">
+        <div class="col-lg-9 col-sm-12">
             <div class="card">
                 <div class="card-body">
-                    <p class="card-text"><img src="${exercise.getPhoto()}" width="870" alt="...">${exercise.getInfo()}</p>
+                    <p class="card-text"><img src="${exercise.getPhoto()}" width="800" alt="...">${exercise.getInfo()}</p>
                 </div>
             </div>
         </div>

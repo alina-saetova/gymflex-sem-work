@@ -43,10 +43,16 @@ body {
     /*color: white;*/
 }
 
+main{
+    min-height: 110%;
+}
+
 h3, h4, h5, h6 {
     color: white;
 }
-
+h1 {
+    color: #FF6A2A;
+}
 .carousel-item {
     height: 95vh;
     min-height: 350px;
@@ -128,6 +134,7 @@ h3, h4, h5, h6 {
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
+    min-height: 100%;
 }
 
 .container.type2 {
@@ -232,7 +239,7 @@ h3, h4, h5, h6 {
     border: none;
     width: 30px;
     height: 30px;
-    font-size: 1.3em;
+    font-size: 1.0em;
     border-radius: 100px;
     background: #FF6A2A;
     color: white;
@@ -243,7 +250,7 @@ h3, h4, h5, h6 {
     border: none;
     width: 30px;
     height: 30px;
-    font-size: 1.3em;
+    font-size: 1.0em;
     border-radius: 100px;
     background: #f05aac;
     color: white;
@@ -256,7 +263,7 @@ h3, h4, h5, h6 {
 
 .like-toggle:not(.like-active):hover {
     background: #ff9c66;
-    width: 60px;
+    width: 45px;
 }
 
 .list-centre {
@@ -280,3 +287,6 @@ h3, h4, h5, h6 {
 }
 
 
+.a_reg {
+    color: white;
+}

@@ -73,6 +73,7 @@
                     </div>
                     <hr>
                     <div>
+                        <a href="/registration" class="a_reg">Регистрация</a>
                         <input type="button" value="Войти" class="btn float-right" onclick="check()">
                     </div>
                 </form>

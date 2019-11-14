@@ -39,7 +39,7 @@
 <%@include file= "includes/nav.jsp"%>
 <div class="container bootstrap snippet">
     <div class="row">
-        <div class="col-sm-10"><h1 class="my-4">     </h1></div>
+        <div class="col-sm-10"><h1 class="my-4"><strong>${training.getName()}</strong></h1></div>
     </div>
     <div class="row">
         <div class="col-lg-4 col-sm-6 mb-4">
@@ -63,8 +63,6 @@
         <div class="col-lg-8 col-sm-12">
             <div class="card">
                 <div class="card-body">
-<%--                    пофиксить отображение названия тренировки--%>
-                    <div class="col-sm-10"><h1 class="my-4" style="text-align: center">${training.getName()} </h1></div>
                     <p class="card-text"><img src="${training.getPhoto()}" width="675" alt="...">${training.getInfo()}</p>
                 </div>
             </div>

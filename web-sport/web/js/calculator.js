@@ -11,7 +11,8 @@ function calculate() {
             formula: $('#formula-select').val()
         },
         success: function (msg) {
-            $('#answer').html(msg);
+            $('#answer').html("");
+            $('#answer').append("<a href=\"#\" class=\"a_reg\">" + msg + "</a>\n");
         }
     })
 }

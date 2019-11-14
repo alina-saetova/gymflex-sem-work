@@ -85,7 +85,7 @@
                             <input type="button" class="btn float-right" id="show_res" value="Рассчитать" onclick="calculate()">
                         </div>
                         <div id="answer">
-                            <h6>Результат</h6>
+                            <a href="#" class="a_reg">Результат</a>
                         </div>
                     </form>
                 </div>

@@ -25,9 +25,9 @@
                                 "                                <div class=\"card h-100\">\n" +
                                 "                                    <a href=\"#\"><img class=\"card-img-top\" src=\"" + msg.objects[i].photo + "\" alt=\"\" height=\"120\"></a>\n" +
                                 "                                    <div class=\"card-body\">\n" +
-                                "                                        <h4 class=\"card-title\">\n" +
+                                "                                        <h5 class=\"card-title\">\n" +
                                 "                                            <a href=\"/exercise?id=" + msg.objects[i].id + "\">" + msg.objects[i].name + "</a>\n" +
-                                "                                        </h4>\n" +
+                                "                                        </h5>\n" +
                                 "                                        <div class='like'>\n" +
                                 "                                            <button class='like-disable'> ♥</button>\n" +
                                 "                                            <span>" + msg.objects[i].cnt_likes + " likes</span>\n" +
@@ -45,6 +45,7 @@
     </script>
 </head>
 <body class="body-with-img">
+<main>
 <%@include file= "includes/nav.jsp"%>
 <div class="container bootstrap snippet">
     <div class="row">
@@ -80,9 +81,9 @@
                             <div class="card h-100">
                                 <a href="#"><img class="card-img-top" src="${ex.getPhoto()}" alt="" height="160"></a>
                                 <div class="card-body">
-                                    <h4 class="card-title">
+                                    <h5 class="card-title">
                                         <a href="/exercise?id=${ex.getId()}">${ex.getName()}</a>
-                                    </h4>
+                                    </h5>
                                     <div class='like'>
                                         <button class='like-disable'> ♥</button>
                                         <span>${ex.getCnt_likes()} likes</span>
@@ -96,6 +97,7 @@
         </div>
     </div>
 </div>
+</main>
 <%@include file= "includes/footer.jsp"%>
 </body>
 </html>

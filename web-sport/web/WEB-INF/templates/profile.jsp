@@ -87,7 +87,7 @@
                         <input class="input-tr" type="text" id="login" value="${user.getLogin()}"/>
                     </div>
                     <div class="list-group-item tr">
-                        <input type="button" value="Изменить данные" class="btn" onclick="save()">
+                        <input type="button" value="Изменить данные" class="btn btn-sm" onclick="save()">
                     </div>
                 </form>
             </div>
@@ -106,7 +106,7 @@
                         <input class="input-tr"  id="new_password" type="text" value=""/>
                     </div>
                     <div class="list-group-item tr">
-                        <input type="button" value="Изменить пароль" class="btn" onclick="change_password()">
+                        <input type="button" value="Изменить пароль" class="btn btn-sm" onclick="change_password()">
                     </div>
                 </form>
                 <form action="/logout">
@@ -165,7 +165,29 @@
                     </c:forEach>
                 </c:if>
                 <c:if test="${saved_exercises.size() == 0 && saved_trainings.size() == 0 && map.size() == 0}">
-                        <%--       то что-то отобразить             --%>
+<%--                    Если нет сохраненного           --%>
+                    <div class="col-lg-9 col-sm-12">
+                        <div class="list-group">
+                            <h3 class="my-2"><strong>Сохраненные тренировки</strong></h3>
+                            <div class="list-group-item tr d-flex justify-content-between">
+                                <h5><strong>Добавьте тренировку</strong></h5>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="list-group">
+                            <h3 class="my-2"><strong>Сохраненные упражнения</strong></h3>
+                            <div class="list-group-item tr d-flex justify-content-between">
+                                <h5><strong>Добавьте упражнения</strong></h5>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="list-group">
+                            <h3 class="my-2"><strong>Мои тренировки</strong></h3>
+                            <div class="list-group-item tr d-flex justify-content-between">
+                                <h5><strong>Создайте свою тренировку</strong></h5>
+                            </div>
+                        </div>
+                    </div>
                 </c:if>
             </div>
         </div>
