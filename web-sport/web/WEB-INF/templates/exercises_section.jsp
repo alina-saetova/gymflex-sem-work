@@ -23,7 +23,7 @@
                         for (var i = 0; i < msg.objects.length; i++) {
                             $("#resptext").append("<div class=\"col-lg-4 col-sm-6 mb-4\">\n" +
                                 "                                <div class=\"card h-100\">\n" +
-                                "                                    <a href=\"#\"><img class=\"card-img-top\" src=\"" + msg.objects[i].photo + "\" alt=\"\" height=\"120\"></a>\n" +
+                                "                                    <a href=\"#\"><img class=\"card-img-top\" src=\"" + msg.objects[i].photo + "\" alt=\"\" height=\"160\"></a>\n" +
                                 "                                    <div class=\"card-body\">\n" +
                                 "                                        <h5 class=\"card-title\">\n" +
                                 "                                            <a href=\"/exercise?id=" + msg.objects[i].id + "\">" + msg.objects[i].name + "</a>\n" +

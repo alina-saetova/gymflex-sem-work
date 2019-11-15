@@ -97,13 +97,13 @@
                         <h5>Старый пароль</h5>
                     </div>
                     <div class="list-group-item tr">
-                        <input class="input-tr" id="old_password" type="text" value=""/>
+                        <input class="input-tr" id="old_password" type="password" value=""/>
                     </div>
                     <div class="list-group-item tr">
                         <h5>Новый пароль</h5>
                     </div>
                     <div class="list-group-item tr">
-                        <input class="input-tr"  id="new_password" type="text" value=""/>
+                        <input class="input-tr"  id="new_password" type="password" value=""/>
                     </div>
                     <div class="list-group-item tr">
                         <input type="button" value="Изменить пароль" class="btn btn-sm" onclick="change_password()">
@@ -129,6 +129,15 @@
                         </form>
                     </c:forEach>
                 </c:if>
+                <c:if test="${saved_trainings.size() == 0}">
+                    <div class="list-group">
+                        <h3 class="my-2"><strong>Сохраненные тренировки</strong></h3>
+                        <div class="list-group-item tr d-flex justify-content-between">
+                            <h5><strong>Добавьте тренировку</strong></h5>
+                        </div>
+                    </div>
+                </c:if>
+                <hr>
                 <c:if test="${saved_exercises.size() != 0}">
                     <h3 class="my-2"><strong>Сохраненные упражнения</strong></h3>
                     <c:forEach var="s_ex" items="${saved_exercises}">
@@ -137,6 +146,14 @@
                             <input type="button" class="btn col-sm-1" value="x" onclick="delete_from_db(${s_ex.getId()}, 'exercise'); remove(${s_ex.getId()})">
                         </div>
                     </c:forEach>
+                </c:if>
+                <c:if test="${saved_exercises.size() == 0}">
+                    <div class="list-group">
+                        <h3 class="my-2"><strong>Сохраненные упражнения</strong></h3>
+                        <div class="list-group-item tr d-flex justify-content-between">
+                            <h5><strong>Добавьте упражнения</strong></h5>
+                        </div>
+                    </div>
                 </c:if>
                 <hr>
                 <c:if test="${map.size() != 0}">
@@ -160,32 +177,14 @@
                                     </div>
                                 </c:forEach>
                             </div>
-                            <hr>
                         </form>
                     </c:forEach>
                 </c:if>
-                <c:if test="${saved_exercises.size() == 0 && saved_trainings.size() == 0 && map.size() == 0}">
-<%--                    Если нет сохраненного           --%>
-                    <div class="col-lg-9 col-sm-12">
-                        <div class="list-group">
-                            <h3 class="my-2"><strong>Сохраненные тренировки</strong></h3>
-                            <div class="list-group-item tr d-flex justify-content-between">
-                                <h5><strong>Добавьте тренировку</strong></h5>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="list-group">
-                            <h3 class="my-2"><strong>Сохраненные упражнения</strong></h3>
-                            <div class="list-group-item tr d-flex justify-content-between">
-                                <h5><strong>Добавьте упражнения</strong></h5>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="list-group">
-                            <h3 class="my-2"><strong>Мои тренировки</strong></h3>
-                            <div class="list-group-item tr d-flex justify-content-between">
-                                <h5><strong>Создайте свою тренировку</strong></h5>
-                            </div>
+                <c:if test="${map.size() == 0}">
+                    <div class="list-group">
+                        <h3 class="my-2"><strong>Мои тренировки</strong></h3>
+                        <div class="list-group-item tr d-flex justify-content-between">
+                            <h5><strong>Создайте свою тренировку</strong></h5>
                         </div>
                     </div>
                 </c:if>

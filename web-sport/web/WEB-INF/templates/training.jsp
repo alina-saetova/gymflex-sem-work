@@ -18,6 +18,7 @@
     <script src="../../js/training.js"></script>
     <script type="text/javascript">
         function like(id) {
+            document.getElementById("textarea1").value='';
             $.ajax({
                 type: "POST",
                 url: "/like_article",
