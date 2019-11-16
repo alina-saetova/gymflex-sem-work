@@ -33,7 +33,7 @@
                                 "                                    <a href=\"#\"><img class=\"card-img-top\" src=\"" + msg.objects[i].photo + "\" alt=\"\" height=\"200\"></a>\n" +
                                 "                                    <div class=\"card-body\">\n" +
                                 "                                        <h4 class=\"card-title\">\n" +
-                                "                                            <a href=\"/exercise?id=" + msg.objects[i].id + "\">" + msg.objects[i].name + "</a>\n" +
+                                "                                            <a href=\"/training?id=" + msg.objects[i].id + "\">" + msg.objects[i].name + "</a>\n" +
                                 "                                        </h4>\n" +
                                 "                                        <div class='like'>\n" +
                                 "                                            <button class='like-disable'> ♥</button>\n" +

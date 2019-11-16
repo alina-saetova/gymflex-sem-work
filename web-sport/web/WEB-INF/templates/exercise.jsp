@@ -59,7 +59,7 @@
         <div class="col-lg-9 col-sm-12">
             <div class="card">
                 <div class="card-body">
-                    <p class="card-text"><img src="${exercise.getPhoto()}" width="800" alt="...">${exercise.getInfo()}</p>
+                    <p class="card-text"><img src="${exercise.getPhoto()}" width="780" alt="...">${exercise.getInfo()}</p>
                 </div>
             </div>
         </div>

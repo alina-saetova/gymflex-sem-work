@@ -64,7 +64,7 @@
         <div class="col-lg-8 col-sm-12">
             <div class="card">
                 <div class="card-body">
-                    <p class="card-text"><img src="${training.getPhoto()}" width="675" alt="...">${training.getInfo()}</p>
+                    <p class="card-text"><img src="${training.getPhoto()}" width="685" alt="...">${training.getInfo()}</p>
                 </div>
             </div>
         </div>
